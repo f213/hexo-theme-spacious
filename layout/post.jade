@@ -10,15 +10,14 @@ if theme.social
 if theme.neighbours
     section#neighbours
         if page.prev
-            a(rel=prev href= url_for(page.prev.path))= page.prev.title
             span ←
+            a(rel=prev href= url_for(page.prev.path))= page.prev.title
         else
             span.disabled ←
 
-        span ↑
         if page.next
-            span →
             a(rel=next href= url_for(page.next.path))= page.next.title
+            span →
         else
             span.disabled →
 
