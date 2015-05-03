@@ -4,6 +4,10 @@ html(lang=page.lang)
     head
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=Edge')
+        != css("css/style")
+        != css("css/custom")
+        if theme.social
+            != css("css/likely")
 
         != partial('_partial/seo')
 
@@ -11,11 +15,6 @@ html(lang=page.lang)
             meta(name="author", content= config.author)
 
 
-        != css("css/style")
-        != css("css/custom")
-
-        if theme.social
-            != css("css/likely")
     .container
 
         != partial('_partial/header')

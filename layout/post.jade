@@ -1,7 +1,7 @@
 section#content!= partial('_partial/article', {post: page, single: true})
 
 if theme.social
-    #social
+    section#social
         .likely
             .facebook Like
             .twitter Tweet
@@ -12,14 +12,10 @@ if theme.neighbours
         if page.prev
             span ←
             a(rel=prev href= url_for(page.prev.path))= page.prev.title
-        else
-            span.disabled ←
 
         if page.next
             a(rel=next href= url_for(page.next.path))= page.next.title
             span →
-        else
-            span.disabled →
 
 if theme.readmore
     section#readmore

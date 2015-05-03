@@ -1,15 +1,35 @@
-article > h1, h2
-    margin-left -1px
-    font-size 24px
-    font-weight normal
-    line-height 28px
+article 
+    > h1, h2
+        margin-left -1px
+        font-size 24px
+        font-weight normal
+        line-height 28px
+    > .content > img
+        margin-bottom 20px
+    > .tags
+        font-size 12px
+        margin-top 10px
+    ul, ol
+        margin-top -15px
+        padding 0 0 0 40px
+    ul > li
+        list-style-type none
+    li
+        margin-bottom 8px
+    time
+        font-size 11px;
+        font-weight bold;
+        letter-spacing .12em;
+        text-transform uppercase;
+        margin 0 0 10px 0;
+    blockquote
+        margin 0
+        border-top 1px solid black
 
 article.favorite > h2
     &:after
         content " ⋆"
 
-.article.tags
-    margin-top 10px
 
 section#neighbours
     font-size 12px
@@ -30,6 +50,3 @@ section#readmore
             > a
                 padding-top 4px
 
-blockquote
-    margin 0
-    border-top 1px solid black
