@@ -1,0 +1,18 @@
+
+header
+    if ! ('current_url' in page) || page.current_url.length
+        h1
+            a(href= url_for('index.html'))= config.title
+    else
+        h1= config.title
+    p= config.subtitle
+    nav
+        each path, name in theme.menu
+            if path.substring(0, 4) == 'tag:'
+                for tag in site.tags.toArray()
+                    if path.substring(4) == tag.name
+                        - path = tag.path
+            if ! is_current(path)
+                a(href=url_for(path)): span= __(name)
+            else
+                a.current: span= __(name)

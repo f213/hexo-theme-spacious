@@ -1,0 +1,51 @@
+@import "nib"
+
+@import "_partial/fonts"
+@import "_partial/fancy-links"
+@import "_partial/lists"
+@import "_partial/post"
+
+length-overall = 1000px
+length-content = 820px
+
+.container
+    max-width length-overall
+    margin-left: 100px
+    text-align left
+h1
+    margin-bottom 10px
+
+header
+    margin 0 auto 32px
+
+footer
+    margin-top 40px
+
+section#content
+    max-width length-content
+    display: block
+
+section.pagination
+    font-size 12px
+    margin-top 40px
+    > h3
+        display inline-block
+        font-size inherit
+        padding 0 3px    
+br
+    display none
+span
+    margin-right 5px
+
+section#tag-info
+    h2
+        margin-top 5px
+    
+.footer.email
+    margin-bottom 10px
+
+footer>div
+    margin-top -5px
+
+#social
+    margin-top 5px

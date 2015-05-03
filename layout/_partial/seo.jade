@@ -1,0 +1,15 @@
+-var title
+-var keywords
+-var description
+
+if page.title
+    -title = page.title
+else if is_tag()
+    -title = page.tag
+else if is_home()
+    -title = config.title
+
+
+-title = title + ' — ' + config.author
+
+title= title

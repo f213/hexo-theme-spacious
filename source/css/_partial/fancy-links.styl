@@ -1,0 +1,55 @@
+a
+    text-decoration none
+    border-bottom 1px solid rgba(0, 96, 160, 0.15)
+    color #0060a0
+    &:visited
+        color #70a0b0
+        border-color rgba(112, 160, 176, 0.15)
+    &:hover
+        color #e05020
+        border-color rgba(224, 80, 32, 0.15);
+nav 
+    > a
+        margin-right 5px
+        border-bottom 0
+        span
+            @extend a
+            color #008ACE
+            border-color #b2ccf0
+            &:visited
+                color #70a0b0
+            &:hover
+                color #CC0000
+                border-color #f0b2b2
+
+    > a + a::before
+        content " ·   "
+        display inline-block
+        white-space pre
+    > a.current
+        span
+            color black
+            border-bottom 0
+            &:hover
+                color black
+        &:hover
+            color black
+
+.article.tags
+    font-size 12px
+    a
+        color #556677
+        border-color rgba(85, 102, 119, 0.15)
+        margin-right 10px
+
+h1,h2
+    > a
+        text-decoration none
+        color black
+        border-color rgba(0, 0, 160, 0.15)
+        &:visited
+            color black
+            border-color rgba(0, 0, 160, 0.15)
+        &:hover
+            color #CC0000
+            border-color #f0b2b2

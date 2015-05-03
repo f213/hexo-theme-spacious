@@ -1,0 +1,20 @@
+# Header
+menu:
+  Избраное: tag:избранное
+  Читаю: tag:читаю
+  rss:  /rss/index.xml
+
+
+email: f@f213.in
+copyright_years: 2015
+neighbours: true
+social: true
+readmore: true
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:

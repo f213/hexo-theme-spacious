@@ -1,0 +1,13 @@
+if page.prev
+    section.top.pagination
+        h3 ↑
+        a(href= url_for(page.prev_link))= __('next')
+
+section#content
+    each post in page.posts.toArray()
+        != partial('article', {post: post})
+
+if page.next
+    section.bottom.pagination
+        h3 ↓
+        a(href= url_for(page.next_link))= __('previous')

@@ -1,0 +1,14 @@
+footer
+    if config.author
+        if theme.email
+            .footer.copyright
+                span &copy
+                != mail_to(theme.email, config.author)
+                = ' '
+                = theme.copyright_years
+        else
+            .footer.copyright &copy; #{config.author} #{theme.copyright_years}
+
+    .footer.engine
+        span= __('engine')
+        a.external(href="http://hexo.io")= __('hexo')

@@ -1,0 +1,30 @@
+doctype html
+// This theme is based on Ilya Birman's theme for the e2 blog engine, http://blogengine.ru
+html(lang=page.lang)
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=Edge')
+
+        != partial('_partial/seo')
+
+        if config.author
+            meta(name="author", content= config.author)
+
+
+        != css("css/style")
+        != css("css/custom")
+
+        if theme.social
+            != css("css/likely")
+    .container
+
+        != partial('_partial/header')
+
+        != body
+
+        != js("js/jquery")
+
+        if theme.social
+            != js("js/likely")
+        
+        != partial('_partial/footer')

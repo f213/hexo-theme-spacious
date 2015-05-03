@@ -1,0 +1,15 @@
+article
+    if single
+        h2.article.title= post.title
+    else
+        h2
+            a.article.title(href= url_for(post.path))= post.title
+
+    .article.time
+        time(datetime=date(post.date))= full_date(post.date, 'DD MMMM, HH:mm') 
+
+    .article.content!= post.content
+
+    .article.tags
+        each tag in post.tags.data
+            a(href= url_for(tag.path))= tag.name
