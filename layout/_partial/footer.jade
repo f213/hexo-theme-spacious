@@ -4,10 +4,10 @@ footer
             .footer.copyright
                 span &copy
                 != mail_to(theme.email, config.author)
-                = ' '
-                = theme.copyright_years
+                span= theme.copyright_years
         else
-            .footer.copyright &copy; #{config.author} #{theme.copyright_years}
+            .footer.copyright &copy; #{config.author}
+            span= theme.copyright_years
 
     .footer.engine
         span= __('engine')
