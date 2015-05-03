@@ -1,9 +1,11 @@
 # Header
 menu:
-  Избраное: tag:избранное
-  Читаю: tag:читаю
-  rss:  /rss/index.xml
+    Избраное: tag:избранное
+    Читаю: tag:читаю
+    rss:  /rss/index.xml
 
+# all posts with this tag will be marked
+favorite_tag: избранное
 
 email: f@f213.in
 copyright_years: 2015

@@ -1,9 +1,13 @@
-article
+- var is_favorite = ""
+each tag in post.tags.toArray()
+    if tag.name == theme.favorite_tag
+        - is_favorite = "favorite"
+
+article(class= is_favorite)
     if single
         h2.article.title= post.title
     else
-        h2
-            a.article.title(href= url_for(post.path))= post.title
+        h2: a.article.title(href= url_for(post.path))= post.title
 
     .article.time
         time(datetime=date(post.date))= full_date(post.date, 'DD MMMM, HH:mm') 
@@ -11,5 +15,5 @@ article
     .article.content!= post.content
 
     .article.tags
-        each tag in post.tags.data
+        each tag in post.tags.toArray()
             a(href= url_for(tag.path))= tag.name
