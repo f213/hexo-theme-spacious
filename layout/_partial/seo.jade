@@ -9,10 +9,27 @@ else if is_tag()
 else if is_home()
     -title = config.title
 
-
 -title = title + ' — ' + config.author
 
 title= title
+
+if 'keywords' in page
+    - keywords = page.keywords;
+else if 'keywords' in theme
+    - keywords = theme.keywords;
+
+if keywords
+    meta(name="keywords", content= keywords)
+
+
+if 'description' in page
+    - description = page.description;
+else if 'description' in theme 
+    - description = theme.description
+
+if description
+    meta(name="description", content= description)
+
 
 if page.next
     if 'next_link' in page
