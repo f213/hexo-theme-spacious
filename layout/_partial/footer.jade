@@ -2,7 +2,7 @@ footer
     if config.author
         if theme.email
             .footer.copyright
-                span &copy
+                span &copy;
                 != mail_to(theme.email, config.author)
                 span= theme.copyright_years
         else
