@@ -21,7 +21,9 @@ html(lang=page.lang)
             link(rel="shortcut icon", href= theme.favicon)
         if theme.apple_touch_icon
             link(rel="apple-touch-icon", href= theme.apple_touch_icon)
-
+        
+        if theme.rss
+            link(rel="alternate", type="application/atom+xml", href= theme.rss)
 
     .container
 

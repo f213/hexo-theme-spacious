@@ -4,6 +4,8 @@ menu:
     Читаю: tag:читаю
     rss:  /rss/index.xml
 
+rss: /rss/index.xml
+
 # all posts with this tag will be marked
 favorite_tag: избранное
 
