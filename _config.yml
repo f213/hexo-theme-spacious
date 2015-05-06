@@ -9,13 +9,14 @@ favorite_tag: избранное
 
 email: f@f213.in
 copyright_years: 2015
-neighbours: true
 social: true
+
+# show section with titles of other posts in the post page
 readmore: true
 
+# show neighbor posts at the post page
+neighbours: true
+
 # Miscellaneous
-favicon: /favicon.png
-twitter:
-google_plus:
-fb_admins:
-fb_app_id:
+favicon: /favicon.ico
+apple_touch_icon: /apple-touch-icon.png

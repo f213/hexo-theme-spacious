@@ -17,6 +17,12 @@ html(lang=page.lang)
         != partial('_partial/config')
         != partial('_partial/google-analytics')
 
+        if theme.favicon
+            link(rel="shortcut icon", href= theme.favicon)
+        if theme.apple_touch_icon
+            link(rel="apple-touch-icon", href= theme.apple_touch_icon)
+
+
     .container
 
         != partial('_partial/header')
