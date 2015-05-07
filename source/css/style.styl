@@ -1,10 +1,11 @@
 @import "nib"
 
+length-overall = 1000px
+length-content = 820px
+
 @import "_partial/fancy-links"
 @import "_partial/post"
 
-length-overall = 1000px
-length-content = 820px
 
 body
     font 15px sans-serif
@@ -13,13 +14,14 @@ body
 
 .container
     max-width length-overall
-    margin-left: 100px
+    margin-left 7vw
     text-align left
 
 h1, h2
     font-weight normal
     font-size 36px
     margin-bottom 5px
+    line-height 40px
 h3
     font-size 20px
 
@@ -28,7 +30,7 @@ header
 
 footer
     margin-top 40px
-    font-size 12px
+    font-size 12p   x
     .footer > span, a
         margin-right 5px
 
@@ -58,3 +60,5 @@ footer>div
 
 section#social
     margin-top 5px
+
+@import ("_partial/mobile")
