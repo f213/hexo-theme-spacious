@@ -1,11 +1,7 @@
 section#content!= partial('_partial/article', {post: page, single: true})
 
 if theme.social
-    section#social
-        .likely
-            .facebook Like
-            .twitter Tweet
-
+    != partial('_partial/social')
 
 if theme.neighbours
     section#neighbours
