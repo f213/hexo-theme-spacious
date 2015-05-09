@@ -9,6 +9,9 @@ rss: /rss/index.xml
 # all posts with this tag will be marked
 favorite_tag: избранное
 
+# use smart timestamps like 'a minute a ago'
+fancy_dates: true
+
 email: f@f213.in
 copyright_years: 2015
 social: true

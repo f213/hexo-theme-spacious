@@ -38,5 +38,7 @@ html(lang=page.lang)
         != js("js/mobile")
         if theme.social
             != js("js/likely")
-        
+        if theme.fancy_dates
+            != partial('_partial/fancy_dates')
         != partial('_partial/footer')
+
