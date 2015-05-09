@@ -1,20 +1,14 @@
 @media screen and (max-width: 640px)
-    .container, body
-        width 100%
-        overflow-x hidden
+    .container
+        margin-left 10px
+        overflow hidden
+        padding-right 5px
+    body
         margin 0
-    header,
-    section#tag-info,
-    article > h2,
-    .article.content > p, .article.content > h4,
-    .article.tags,
-    section#social,
-    footer
-        margin-left 2vw
+        width 100%
+    .container, body
+        overflow-x hidden
     
-    blockquote
-        padding-left 2vw
-
     p
         line-height 24px
     footer
@@ -25,6 +19,8 @@
             display none
         > h1, h2
             line-height 32px
+            margin-left 0
+            font-size 23px
         > p
             line-height 26px
         > .content > img
@@ -37,7 +33,7 @@
         display none
 
     .mobile-centered-image
+        position relative
+        left -5px
         margin 0
         text-align center
-        width 100%
-        overflow-x hidden
