@@ -30,6 +30,12 @@ article
     blockquote
         margin 0
         border-top 1px solid black
+        > p:first-child
+            &:before
+                content "«"
+        > p:last-child
+            &:after
+                content "»"
 
 article.favorite > h2
     &:after
