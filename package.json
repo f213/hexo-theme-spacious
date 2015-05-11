@@ -1,0 +1,21 @@
+{
+  "name": "hexo-theme-spacious",
+  "version": "0.0.1",
+  "description": "Hexo theme  based on Ilya Birman's theme for the e2 blog engine",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:f213/hexo-theme-spacious"
+  },
+  "author": "Fedor Borshev <f@f213.in> (http://f213.in/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/f213/hexo-theme-spacious/issues"
+  },
+  "homepage": "https://github.com/f213/hexo-theme-spacious",
+  "dependencies": {
+    "smart-plurals": "^1.1.0"
+  }
+}
