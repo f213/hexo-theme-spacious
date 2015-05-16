@@ -18,4 +18,5 @@ article(class= is_favorite)
     if 'tags' in post
         .article.tags
             each tag in post.tags.toArray()
-                a(href= url_for(tag.path))= tag.name
+                if ! is_tag() || ! is_current(tag.path)
+                    a(href= url_for(tag.path))= tag.name
