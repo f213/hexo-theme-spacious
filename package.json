@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-spacious",
   "version": "0.0.1",
-  "description": "Hexo theme  based on Ilya Birman's theme for the e2 blog engine",
+  "description": "Hexo theme based on Ilya Birman's theme for the e2 blog engine",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,10 @@
   "homepage": "https://github.com/f213/hexo-theme-spacious",
   "dependencies": {
     "smart-plurals": "^1.1.0"
+  },
+  "devDependencies": {
+    "check-pages": "^0.8.0",
+    "gulp": "^3.8.11",
+    "gulp-shell": "^0.4.1"
   }
 }
