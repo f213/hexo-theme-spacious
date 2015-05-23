@@ -3,7 +3,7 @@ if page.prev
         h3 ↑
         a(href= url_for(page.prev_link))= __('next')
 
-section#content
+main
     each post in page.posts.toArray()
         != partial('article', {post: post})
 
