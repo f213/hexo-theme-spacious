@@ -36,13 +36,13 @@ if page.next
         -var next_link = page.next_link
     else
         -var next_link = page.next.path
-    link(rel="next", href= next_link)
+    link(rel="next", href= url_for(next_link))
 
 if page.prev
     if 'prev_link' in page
         -var prev_link = page.prev_link
     else
         -var prev_link = page.prev.path
-    link(rel="prev", href= prev_link)
+    link(rel="prev", href= url_for(prev_link))
 
 link(rel="canonical" href= url)

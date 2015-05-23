@@ -25,7 +25,7 @@ html(lang=page.lang)
             link(rel="apple-touch-icon", href= theme.apple_touch_icon)
         
         if theme.rss
-            link(rel="alternate", type="application/atom+xml", href= theme.rss)
+            link(rel="alternate", type="application/atom+xml", href= url_for(theme.rss))
 
     .container
 
