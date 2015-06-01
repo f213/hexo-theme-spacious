@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    shell = require('gulp-shell'),
+    $ = require('gulp-load-plugins')(),
     check_pages = require('check-pages');
 
 gulp.task('brokenlinks', function(callback){
@@ -17,4 +17,9 @@ gulp.task('brokenlinks', function(callback){
     check_pages(console, options, callback);
 });
 
-gulp.task('server',  shell.task('node_modules/hexo/bin/hexo server', {cwd: '../../'}));
+gulp.task('server',  $.shell.task('node_modules/hexo/bin/hexo server', {cwd: '../../'}));
+
+gulp.task('csslint', function(){
+     return gulp.src('source/css/**/*.styl')
+        .pipe($.stylint());
+});

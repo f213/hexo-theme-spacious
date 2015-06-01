@@ -1,26 +1,35 @@
+border-black        = rgba(0, 0, 160, .15)
+border-red          = rgba(224, 80, 32, .5);
+border-blue         = rgba(112, 160, 176, .15)
+border-blue-body    = rgba(85, 102, 119, .15)
+
+color-navigation    = #008ace
+
 a
     text-decoration none
-    border-bottom 1px solid rgba(0, 96, 160, 0.15)
+    border-bottom 1px solid rgba(0, 96, 160, .15)
     color #0060a0
+    &:not(:hover)
+        transition color .3s ease
     &:visited
         color #70a0b0
-        border-color rgba(112, 160, 176, 0.15)
+        border-color border-blue
     &:hover
         color #e05020
-        border-color rgba(224, 80, 32, 0.15);
-nav 
+        border-color border-red
+
+nav
     > a
         margin-right 4px
         border-bottom 0
         span
-            @extend a
-            color #008ACE
-            border-color #b2ccf0
+            border-bottom 1px solid #b2ccf0
+            color color-navigation
             &:visited
-                color #70a0b0
+                color navigation-color
             &:hover
                 color #CC0000
-                border-color #f0b2b2
+                border-color border-red
 
     > a + a::before
         content " ·  "
@@ -38,22 +47,21 @@ nav
 .article.tags
     a
         color #556677
-        border-color rgba(85, 102, 119, 0.15)
+        border-color border-blue-body
         margin-right 10px
         &:hover
             color #e05020
-            border-color rgba(224, 80, 32, 0.15);
-h1,h2
+            border-color border-red
+h1, h2
     > a
-        text-decoration none
         color black
-        border-color rgba(0, 0, 160, 0.15)
+        border-color border-black
         &:visited
             color black
-            border-color rgba(0, 0, 160, 0.15)
+            border-color border-black
         &:hover
             color #CC0000
-            border-color #f0b2b2
+            border-color border-red
 
 footer a
     color #70a0b0
