@@ -23,3 +23,9 @@ gulp.task('csslint', function(){
      return gulp.src('source/css/**/*.styl')
         .pipe($.stylint());
 });
+
+gulp.task('jshint', function(){
+    return gulp.src(['source/js/**/*.js', '!source/js/vendor/**'])
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('default'));
+});
