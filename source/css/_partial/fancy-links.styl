@@ -1,13 +1,13 @@
 border-black        = rgba(0, 0, 160, .15)
 border-red          = rgba(224, 80, 32, .5);
 border-blue         = rgba(112, 160, 176, .15)
-border-blue-body    = rgba(85, 102, 119, .15)
+border-blue-body    = rgba(85, 102, 119, .4)
 
 color-navigation    = #008ace
 
 a
     text-decoration none
-    border-bottom 1px solid rgba(0, 96, 160, .15)
+    border-bottom 1px solid border-blue-body
     color #0060a0
     &:not(:hover)
         transition color .3s ease
@@ -47,8 +47,6 @@ nav
 .article.tags
     a
         color #556677
-        border-color border-blue-body
-        margin-right 10px
         &:hover
             color #e05020
             border-color border-red
