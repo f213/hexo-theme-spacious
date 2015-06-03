@@ -19,11 +19,24 @@ article
             margin-right 10px
     ul, ol
         margin-top -15px
+    ol
         padding 0 0 0 40px
-    ul > li
-        list-style-type none
+        counter-reset ol
+    ul
+        padding 0 0 0 1.5em
     li
         margin-bottom 8px
+    ul > li
+        list-style-type none
+        &:before
+            content '\2014\a0'
+            margin-left -18px
+    ol > li
+        list-style-type none
+        &:before
+            counter-increment ol
+            content counter(ol) ')\a0'
+            margin-left -18px
     time
         font-size 11px;
         font-weight bold;
