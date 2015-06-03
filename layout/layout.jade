@@ -6,10 +6,12 @@ html(lang=page.lang)
         meta(http-equiv='X-UA-Compatible', content='IE=Edge')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
+        // build:css /css/bundle.css 
         != css("css/style")
         != css("css/custom")
         if theme.social
             != css("css/likely")
+        // endbuild 
 
         != partial('_partial/seo')
 
@@ -33,11 +35,17 @@ html(lang=page.lang)
 
         != body
 
+        //build:js /js/bundle.js 
         != js("js/vendor/jquery-2.1.3.min")
         //- != js("js/dev")
         != js("js/mobile")
         if theme.social
             != js("js/vendor/likely")
+        if theme.fancy_dates
+            != js("js/vendor/moment-with-locales.min")
+            != js("js/vendor/livestamp.min")
+        //endbuild 
+
         if theme.fancy_dates
             != partial('_partial/fancy_dates')
         != partial('_partial/footer')

@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 gulp.task('brokenlinks', function(callback){
     
     var options = {
-        pageUrls:       [ 'http://localhost:4000/blog' ],
+        pageUrls:       [ 'http://localhost:4000' ],
         checkLinks:     true,
         onlySameDomain: true,
         summary:        true,
