@@ -46,12 +46,18 @@ article
     blockquote
         margin 0
         border-top 1px solid black
-        > p:first-child
+        p:first-child
             &:before
                 content "«"
-        > p:last-child
+        p:last-child
             &:after
                 content "»"
+        footer
+            cite, strong
+                margin-left 5px
+            cite:before
+                content '\2014\a0'
+
     .video-container
         position relative
         padding-bottom 56.25% // 16 x 9
