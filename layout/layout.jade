@@ -34,15 +34,16 @@ html(lang=page.lang)
         != partial('_partial/header')
 
         body !{body}
-        //build:js /js/bundle.js 
-        != js("js/vendor/jquery-2.1.3.min")
+        != js("js/vendor/jquery")
         //- != js("js/dev")
+        if theme.fancy_dates
+            != js("js/vendor/moment-with-locales")
+            != js("js/vendor/livestamp")
+
+        //build:js /js/bundle.js 
         != js("js/mobile")
         if theme.social
             != js("js/vendor/likely")
-        if theme.fancy_dates
-            != js("js/vendor/moment-with-locales.min")
-            != js("js/vendor/livestamp.min")
         //endbuild 
 
         if theme.fancy_dates
