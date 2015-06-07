@@ -3,6 +3,9 @@ main!= partial('_partial/article', {post: page, single: true})
 if theme.social
     != partial('_partial/social')
 
+if page.comments
+    #disqus_thread
+
 if theme.neighbours
     section#neighbours
         if page.prev
