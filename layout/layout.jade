@@ -18,7 +18,6 @@ html(lang=page.lang)
         if config.author
             meta(name="author", content= config.author)
 
-        != partial('_partial/config')
         != partial('_partial/google-analytics')
         != partial('_partial/yandex-metrika')
 
@@ -36,7 +35,6 @@ html(lang=page.lang)
 
         body !{body}
         != js("js/vendor/jquery")
-        //- != js("js/dev")
         if theme.fancy_dates
             != js("js/vendor/moment-with-locales")
             != js("js/vendor/livestamp")
