@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-spacious",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Hexo theme based on Ilya Birman's theme for the e2 blog engine",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +15,14 @@
     "url": "https://github.com/f213/hexo-theme-spacious/issues"
   },
   "homepage": "https://github.com/f213/hexo-theme-spacious",
+  "keywords": [
+      "hexo",
+      "theme",
+      "spacious",
+      "blog",
+      "cms",
+      "framework"
+  ],
   "dependencies": {
     "smart-plurals": "^1.1.0"
   },

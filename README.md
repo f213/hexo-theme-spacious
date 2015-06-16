@@ -4,12 +4,17 @@ This is a simple [Hexo](http://hexo.io) theme, based on Ilya Birman's theme for 
 
 ## Installation
 ```
-cd hexo/themes
+cd hexo
+npm install --save hexo-renderer-jade hexo-renderer-stylus
+cd themes
 git clone git@github.com:f213/hexo-theme-spacious
 cd hexo-theme-spacious
 npm install
 ```
 Then change your `theme` setting in `_config.yml`.
+
+## Demo
+You can review demo at my [personal blog](https://f213.in) in russian.
 
 ## Features
 ### Tag navigation menu
@@ -33,8 +38,9 @@ There is some special tag for highlighting your favorite posts. By default it is
 This theme can nicely format your post dates, like 'an hour ago' or '2 months ago'. This is done via [Livestamp.js](https://github.com/mattbradley/livestampjs) and can be turned off via the `fancy_dates` variable in `_config.yml`.
 
 ### Pluralistaion
-There is a simple helper interface for [Smart.Plurals](https://github.com/scottrippey/Smart-Plurals), named `plural`. Usage of this helper is up to theme users, but i prefer to use it like this.
-First, i place the needed amount of plural forms in my `language.yml` devided by comma, like this:
+The theme has a simple helper interface for [Smart.Plurals](https://github.com/scottrippey/Smart-Plurals), named `plural`. Usage of this helper is up to theme users, but i prefer to use it like described below.
+
+First, i place the needed amount of plural forms in my `languages/<language>.yml` separeted by comma, like this:
 ```
 posts:      post, posts
 ```
@@ -47,11 +53,11 @@ plural(page.posts.data.length, __('posts'))
 ## Building and customizing
 ### Technologies
 Theme is built with Jade and Stylus, so it can be easily customized.
+
 ### Build process
 CSS and JS refereneces are [useref](https://github.com/digisfera/useref)-friendly. The theme has bundled versions of vendor libraries for offline usage. For prudction i prefer to replace them with [cdnizer](https://github.com/OverZealous/cdnizer). 
 
 Here is my [Gulpfile](https://gist.github.com/f213/0d03c8d3bf8e5dd78969).
 
 ### Custom JS and CSS
-Custom JS and CSS files are inteded to be placed in the `./source/js/custom.js` and `./source/css/custom.css` files. Please note that hexo does pass this files through its render mechanism, so `./source/css/custom.styl` (or your favorite preprocessor) are welcome.
-
+Custom JS and CSS files are inteded to be placed in the `./source/js/custom.js` and `./source/css/custom.css` files. Please note that hexo does pass this files through its rendering mechanism, so `./source/css/custom.styl` (or your favorite preprocessor) is welcome.
