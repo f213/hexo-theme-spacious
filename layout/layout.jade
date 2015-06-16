@@ -8,9 +8,9 @@ html(lang=page.lang)
 
         // build:css /css/bundle.css 
         != css("css/style")
-        != css("css/custom")
         if theme.social
             != css("css/likely")
+        != css("css/custom")
         // endbuild 
 
         != partial('_partial/seo')
@@ -43,6 +43,7 @@ html(lang=page.lang)
         != js("js/mobile")
         if theme.social
             != js("js/vendor/likely")
+        != js("js/custom")
         //endbuild 
 
         if theme.fancy_dates
