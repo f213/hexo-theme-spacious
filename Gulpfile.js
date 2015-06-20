@@ -29,3 +29,5 @@ gulp.task('jshint', function(){
         .pipe($.jshint())
         .pipe($.jshint.reporter('default'));
 });
+
+gulp.task('test', ['csslint', 'jshint', 'brokenlinks']);
