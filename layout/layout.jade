@@ -26,12 +26,10 @@ html(lang=page.lang)
         
         if theme.rss
             link(rel="alternate", type="application/atom+xml", href= url_for(theme.rss))
-
-    .container
-
+    body
         != partial('_partial/header')
+        != body
 
-        body !{body}
         != js("js/vendor/jquery")
         if theme.fancy_dates
             != js("js/vendor/moment-with-locales")
@@ -45,7 +43,6 @@ html(lang=page.lang)
 
         +configured_lib('yandex_metrika')
         +configured_lib('google_analytics')
-        +configured_lib('swiftype')
 
         //endbuild 
 
