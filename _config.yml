@@ -31,8 +31,7 @@ disqus_shortname:
 
 # analytics
 
-google_analytics:
-# e.g google_analytics: GA-100500
-
+# for the next line to work you should place your tracking code
+# provided by google to your hexo_dir/source/js/google-analytics.js
+google_analytics: js/google-analytics.js
 yandex_metrika:
-# e.g. yandex_metrika: <path_to_your_metrika_install_script.js>

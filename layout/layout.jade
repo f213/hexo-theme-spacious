@@ -1,5 +1,6 @@
 doctype html
 // This theme is based on Ilya Birman's theme for the e2 blog engine, http://blogengine.ru
+include _partial/_common.jade
 html(lang=page.lang)
     head
         meta(charset='utf-8')
@@ -17,9 +18,6 @@ html(lang=page.lang)
 
         if config.author
             meta(name="author", content= config.author)
-
-        != partial('_partial/google-analytics')
-        != partial('_partial/yandex-metrika')
 
         if theme.favicon
             link(rel="shortcut icon", href= theme.favicon)
@@ -44,6 +42,11 @@ html(lang=page.lang)
         if theme.social
             != js("js/vendor/likely")
         != js("js/custom")
+
+        +configured_lib('yandex_metrika')
+        +configured_lib('google_analytics')
+        +configured_lib('swiftype')
+
         //endbuild 
 
         if theme.fancy_dates

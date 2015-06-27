@@ -1,0 +1,3 @@
+mixin configured_lib (lib)
+    if lib in theme && theme[lib]
+        != js(theme[lib])
