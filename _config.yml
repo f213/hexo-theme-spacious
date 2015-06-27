@@ -25,3 +25,14 @@ neighbours: true
 # Miscellaneous
 favicon: /favicon.ico
 apple_touch_icon: /apple-touch-icon.png
+
+# disqus
+disqus_shortname:
+
+# analytics
+
+google_analytics:
+# e.g google_analytics: GA-100500
+
+yandex_metrika:
+# e.g. yandex_metrika: <path_to_your_metrika_install_script.js>
