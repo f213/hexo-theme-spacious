@@ -61,3 +61,6 @@ Here is my [Gulpfile](https://gist.github.com/f213/0d03c8d3bf8e5dd78969).
 
 ### Custom JS and CSS
 Custom JS and CSS files are inteded to be placed in the `./source/js/custom.js` and `./source/css/custom.css` files. Please note that hexo does pass this files through its rendering mechanism, so `./source/css/custom.styl` (or your favorite preprocessor) is welcome.
+
+### Development Mode
+Currently hexo [lacks](https://github.com/hexojs/hexo/issues/371) development mode support. I suggest that one should use some environment variables. For example this theme uses `HEXO_DEV` variable to switch off Google analytics while running hexo localy.
