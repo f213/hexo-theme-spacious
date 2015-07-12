@@ -1,6 +1,6 @@
 doctype html
 // This theme is based on Ilya Birman's theme for the e2 blog engine, http://blogengine.ru
-include _partial/_common.jade
+include _partial/lib
 html(lang=page.lang)
     head
         meta(charset='utf-8')
@@ -18,6 +18,8 @@ html(lang=page.lang)
 
         if config.author
             meta(name="author", content= config.author)
+
+        meta(name="generator", content= "Hexo " + env.version)
 
         if theme.favicon
             link(rel="shortcut icon", href= theme.favicon)

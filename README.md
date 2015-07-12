@@ -32,7 +32,7 @@ menu:
 ```    
 
 ### Favorite tag
-There is some special tag for highlighting your favorite posts. By default it is named 'Избранное' and can be configured via   the `favortie_tag` variable in `_config.yml`.
+There is some special tag for highlighting your favorite posts. By default it is named 'Избранное' and can be configured via the `favortie_tag` variable in `_config.yml`.
 
 ### Formatting dates
 This theme can nicely format your post dates, like 'an hour ago' or '2 months ago'. This is done via [Livestamp.js](https://github.com/mattbradley/livestampjs) and can be turned off via the `fancy_dates` variable in `_config.yml`.
@@ -49,6 +49,19 @@ And then i use in my template:
 plural(page.posts.data.length, __('posts'))
 ```
 `__` here is a standart Hexo l10n helper.
+### SEO
+Theme has a flexible configuration for some robot-frendly page parameters. Page titles, `description` and `keywords` meta tags
+can be configured by [front-matter](https://hexo.io/docs/front-matter.html) variables with the same names, or on by-url basis
+via [data file](https://hexo.io/docs/data-files.html) `seo.yml`:
+```
+tags/myTag/index.html: # this is a canonical url without hostname
+    title: My Best Title
+    keywords:
+        - cool
+        - sms free
+        - user-friendly
+    description: This is a page with description configured through source/_data/seo.yml    
+```
 
 ## Building and customizing
 ### Technologies

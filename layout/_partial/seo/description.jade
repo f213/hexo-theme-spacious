@@ -1,0 +1,4 @@
+if _.has(page, 'description')
+    +meta('description', page.description)
+else if _.has(theme, 'description')
+    +meta('description', theme.description)

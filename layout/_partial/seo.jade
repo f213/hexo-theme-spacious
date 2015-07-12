@@ -1,48 +1,38 @@
--var title
--var keywords
--var description
+-
+    var metas = {},
+        links = {};
 
-if page.title
-    -title = page.title
-else if is_tag()
-    -title = page.tag
-else if is_home()
-    -title = config.title
+    var title;
 
--title = title + ' — ' + config.author
+mixin meta(name, value)
+    - metas[name] = value;
+mixin link(name, href)
+    - links[name] = url_for(href);
+mixin title(value)
+    - title = value + ' — ' + config.author;
+
+
+//- page defaults begin
+include seo/title
+include seo/keywords
+include seo/description
+
+include seo/prev-next
+include seo/canonical
+//- page default end
+
+if _.has(site.data.seo, page.canonical_path)
+    - var configured = site.data.seo[page.canonical_path];
+    if _.has(configured, 'title')
+        +title(configured['title'])
+    if _.has(configured, 'description')
+        +meta('description', configured.description)
+    if _.has(configured, 'keywords')
+        +meta('keywords', configured.keywords.join(', '))
 
 title= title
+each value, name in metas
+    meta(name= name, value= value)
+each href, name in links
+    link(rel= name, href= href)
 
-if 'keywords' in page
-    - keywords = page.keywords;
-else if 'keywords' in theme
-    - keywords = theme.keywords;
-
-if keywords
-    meta(name="keywords", content= keywords)
-
-
-if 'description' in page
-    - description = page.description;
-else if 'description' in theme 
-    - description = theme.description
-
-if description
-    meta(name="description", content= description)
-
-
-if page.next
-    if 'next_link' in page
-        -var next_link = page.next_link
-    else
-        -var next_link = page.next.path
-    link(rel="next", href= url_for(next_link))
-
-if page.prev
-    if 'prev_link' in page
-        -var prev_link = page.prev_link
-    else
-        -var prev_link = page.prev.path
-    link(rel="prev", href= url_for(prev_link))
-
-link(rel="canonical" href= url)

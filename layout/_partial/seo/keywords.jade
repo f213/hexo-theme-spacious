@@ -1,0 +1,5 @@
+if _.has(page, 'keywords')
+    +meta('keywords', page.keywords)
+else if _.has(theme, 'keywords')
+    +meta('keywords', theme.keywords)
+

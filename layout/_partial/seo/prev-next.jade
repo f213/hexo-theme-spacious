@@ -1,0 +1,11 @@
+if is_archive() || is_home()
+    //- for home and archive page we use pagination links
+    if page.next
+        +link('next', page.next_link)
+    if page.prev
+        +link('prev', page.prev_link)
+else
+    if page.next
+        +link('next', page.next.path)
+    if page.prev
+        +link('prev', page.prev.path)
