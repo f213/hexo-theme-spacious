@@ -1,0 +1,23 @@
+nav
+    > a
+        margin-right 4px
+        border-bottom 0
+        span
+            border-bottom 1px solid #b2ccf0
+            color color-navigation
+            &:hover
+                color #CC0000
+                border-color border-red
+
+    > a + a::before
+        content " ·  "
+        display inline-block
+        white-space pre
+    > a.current
+        span
+            color black
+            border-bottom 0
+            &:hover
+                color black
+        &:hover
+            color black

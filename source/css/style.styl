@@ -1,69 +1,20 @@
 @import "nib"
 
-length-overall = 1000px
-length-content = 820px
+length-overall      = 1000px
+length-content      = 820px
 
-@import "_partial/fancy-links"
-@import "_partial/post"
-@import "_partial/post-tables"
+border-black        = rgba(0, 0, 160, .15)
+border-red          = rgba(224, 80, 32, .5);
+border-blue         = rgba(112, 160, 176, .15)
+border-blue-body    = rgba(85, 102, 119, .4)
 
+color-navigation    = #008ace
 
-body
-    font 15px "Helvetica Neue", Helvetica, Arial, sans-serif
-    background white
-    line-height 1.5em
-    max-width length-overall
-    margin-left 7vw
-    text-align left
+@import "_partial/layout"
+@import "_partial/navigation"
+@import "_partial/links"
+@import "_partial/sections"
+@import "_partial/post-contents"
+@import "_partial/post-contents-tables"
 
-h1, h2
-    font-weight normal
-    font-size 36px
-    margin-bottom 0
-    line-height 40px
-h3
-    font-size 20px
-
-header
-    margin 0 auto 32px
-
-footer
-    margin-top 40px
-    font-size 12px
-    .footer > span, a
-        margin-right 5px
-
-main
-    max-width length-content
-    display: block
-
-article:first-child
-    margin-top 0
-article
-    margin-top 80px
-
-section.pagination
-    font-size 12px
-    > h3
-        display inline-block
-        font-size inherit
-        padding 0 3px
-br
-    display none
-
-section#tag-info
-    h2
-        margin-top 5px
-    span
-        margin-right 5px
-    
-.footer.email
-    margin-bottom 10px
-
-footer>div
-    margin-top -5px
-
-section#social
-    margin-top 15px
-
-@import ("_partial/mobile")
+@import "_partial/mobile"

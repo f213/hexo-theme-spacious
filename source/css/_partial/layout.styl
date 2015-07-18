@@ -1,0 +1,42 @@
+body
+    font 15px "Helvetica Neue", Helvetica, Arial, sans-serif
+    background white
+    line-height 1.5em
+    max-width length-overall
+    margin-left 7vw
+    text-align left
+
+h1, h2
+    font-weight normal
+    font-size 36px
+    margin-bottom 0
+    line-height 40px
+h3
+    font-size 20px
+br
+    display none
+
+header
+    margin 0 auto 32px
+
+footer
+    margin-top 40px
+    font-size 12px
+    .footer > span, a
+        margin-right 5px
+    div
+        margin-top -5px
+    .email
+        margin-bottom 10px
+main
+    max-width length-content
+    display: block
+
+article:first-child
+    margin-top 0
+article
+    margin-top 80px
+
+article.favorite > h2
+    &:after
+        content " ⋆"
