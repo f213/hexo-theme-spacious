@@ -1,7 +1,7 @@
 {
   "name": "hexo-theme-spacious",
-  "version": "1.0.0",
-  "description": "Hexo theme based on Ilya Birman's theme for the e2 blog engine",
+  "version": "1.1.0",
+  "description": "Hexo clean and clear theme with a lot of free space.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

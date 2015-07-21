@@ -37,7 +37,7 @@ There is some special tag for highlighting your favorite posts. By default it is
 ### Formatting dates
 This theme can nicely format your post dates, like 'an hour ago' or '2 months ago'. This is done via [Livestamp.js](https://github.com/mattbradley/livestampjs) and can be turned off via the `fancy_dates` variable in `_config.yml`.
 
-### Pluralistaion
+### Pluralisation
 The theme has a simple helper interface for [Smart.Plurals](https://github.com/scottrippey/Smart-Plurals), named `plural`. Usage of this helper is up to theme users, but i prefer to use it like described below.
 
 First, i place the needed amount of plural forms in my `languages/<language>.yml` separeted by comma, like this:
