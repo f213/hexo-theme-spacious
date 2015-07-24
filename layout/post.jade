@@ -19,7 +19,6 @@ if theme.neighbours
 if theme.readmore
     section#readmore
         h3= __('readmore')
-        div
-            for post in site.posts.toArray().slice(0,9)
-                if (post.path !== page.path)
-                    p: a(href= url_for(post.path))= post.title
+        for post in site.posts.sort('date', -1).slice(0,9).toArray()
+            if (post.slug !== page.slug)
+                p: a(href= url_for(post.path))= post.title
