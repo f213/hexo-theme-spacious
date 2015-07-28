@@ -32,7 +32,7 @@ if _.has(site.data.seo, page.canonical_path)
 
 title= title
 each value, name in metas
-    meta(name= name, value= value)
+    meta(name= name, content= value)
 each href, name in links
     link(rel= name, href= href)
 
