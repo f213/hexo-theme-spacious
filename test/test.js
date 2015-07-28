@@ -1,6 +1,7 @@
 var chai        = require('chai'),
     should      = chai.should(),
     pageChecker = require('check-pages')
+    w3c         = require('w3cjs');
 
 chai.use(require('chai-http'));
 
@@ -10,7 +11,7 @@ var host = 'http://localhost:3000';
 describe('theme', function(){
     describe('connectivity', function(){
         it('Shoud be fetchable', function(done){
-            return chai.request(host)
+            chai.request(host)
                 .get('/')
                 .end(function(err, res){
                     should.not.exist(err);
@@ -30,6 +31,22 @@ describe('theme', function(){
                 should.not.exist(err);
                 done();
             });
+        });
+    });
+    describe('html', function(){
+        it('Shoud be w3c valid', function(done){
+            chai.request(host)
+                .get('/')
+                .end(function(err, res){
+                    should.not.exist(err);
+                    w3c.validate({
+                        input:  res.text,
+                        callback: function(res) {
+                            res.messages.should.have.length(0);
+                            done();
+                        }
+                    });
+                });
         });
     });
 });
