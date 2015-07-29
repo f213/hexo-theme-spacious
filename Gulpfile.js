@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
-    $ = require('gulp-load-plugins')(),
-    check_pages = require('check-pages');
+    $ = require('gulp-load-plugins')();
 
 gulp.task('server',  $.shell.task('node_modules/hexo/bin/hexo server', {cwd: '../../'}));
 
@@ -17,5 +16,7 @@ gulp.task('jshint', function(){
 
 gulp.task('test', ['csslint', 'jshint'], function(){
     return gulp.src('test/test.js')
-        .pipe($.mocha());
+        .pipe($.mocha({
+            timeout:    8000
+        }));
 });

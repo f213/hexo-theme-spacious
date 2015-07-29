@@ -1,7 +1,7 @@
-var chai        = require('chai'),
-    should      = chai.should(),
-    pageChecker = require('check-pages')
-    w3c         = require('w3cjs');
+var chai            = require('chai'),
+    should          = chai.should(),
+    pageChecker     = require('check-pages'),
+    w3cValidator    = require('w3cjs');
 
 chai.use(require('chai-http'));
 
@@ -10,7 +10,7 @@ var host = 'http://localhost:3000';
 
 describe('theme', function(){
     describe('connectivity', function(){
-        it('Shoud be fetchable', function(done){
+        it('shoud be fetchable', function(done){
             chai.request(host)
                 .get('/')
                 .end(function(err, res){
@@ -21,7 +21,7 @@ describe('theme', function(){
         });
     });
     describe('broken links', function(){
-        it('Should not exist', function(done){
+        it('should not exist', function(done){
             pageChecker(console, {
                 pageUrls:       [ host + '/' ],
                 checkLinks:     true,
@@ -34,15 +34,15 @@ describe('theme', function(){
         });
     });
     describe('html', function(){
-        it('Shoud be w3c valid', function(done){
+        it('shoud be w3c valid', function(done){
             chai.request(host)
                 .get('/')
                 .end(function(err, res){
                     should.not.exist(err);
-                    w3c.validate({
+                    w3cValidator.validate({
                         input:  res.text,
                         callback: function(res) {
-                            res.messages.should.have.length(0);
+                            res.messages.should.not.have.length.above(0);
                             done();
                         }
                     });
