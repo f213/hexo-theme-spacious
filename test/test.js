@@ -10,18 +10,18 @@ var host = 'http://localhost:3000';
 
 describe('theme', function(){
     describe('connectivity', function(){
-        it('shoud be fetchable', function(done){
+        it('shoud work', function(callback){
             chai.request(host)
                 .get('/')
                 .end(function(err, res){
                     should.not.exist(err);
                     res.should.have.status(200);
-                    done();
+                    callback();
                 });
         });
     });
     describe('broken links', function(){
-        it('should not exist', function(done){
+        it('should not exist', function(callback){
             pageChecker(console, {
                 pageUrls:       [ host + '/' ],
                 checkLinks:     true,
@@ -29,12 +29,12 @@ describe('theme', function(){
                 summary:        true,
             }, function(err){
                 should.not.exist(err);
-                done();
+                callback();
             });
         });
     });
     describe('html', function(){
-        it('shoud be w3c valid', function(done){
+        it('home page should be w3c valid', function(callback){
             chai.request(host)
                 .get('/')
                 .end(function(err, res){
@@ -42,8 +42,25 @@ describe('theme', function(){
                     w3cValidator.validate({
                         input:  res.text,
                         callback: function(res) {
-                            res.messages.should.not.have.length.above(0);
-                            done();
+                            res.messages.should.not.have.length.above(2);
+                            // by default, w3c gives two messages: 'The Content-Type was “text/html”. Using the HTML parser' and 'Using the schema for HTML with SVG 1.1, MathML 3.0, RDFa 1.1, and ITS 2.0 support'
+                            callback();
+                        }
+                    });
+                });
+        });
+        it('post page should be w3c valid', function(done){
+            chai.request(host)
+                .get('/all/automated-test/')
+                .end(function(err, res){
+                    should.not.exist(err);
+                    w3cValidator.validate({
+                        input:  res.text,
+                        callback: function(res) {
+                            console.log(res.messages);
+                            res.messages.should.not.have.length.above(2);
+                            // by default, w3c gives two messages: 'The Content-Type was “text/html”. Using the HTML parser' and 'Using the schema for HTML with SVG 1.1, MathML 3.0, RDFa 1.1, and ITS 2.0 support'
+                            callback();
                         }
                     });
                 });
