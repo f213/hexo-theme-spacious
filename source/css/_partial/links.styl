@@ -1,27 +1,27 @@
 a
     text-decoration none
-    border-bottom 1px solid border-blue-body
-    color #0060a0
+    border-bottom 1px solid link-border-color
+    color link-color
     -webkit-tap-highlight-color rgba(0, 0, 0, 0)
     &:not(:hover)
         transition color .5s ease
     &:hover
-        color #e05020
-        border-color border-red
+        color link-hover
+        border-color link-border-hover
 
 .article.tags
     a
         color #556677
         &:hover
-            color #e05020
-            border-color border-red
+            color link-hover
+            border-color link-border-hover
 h1, h2
-    > a
-        color black
-        border-color border-black
+    a
+        color header-color
+        border-color header-border-color
         &:hover
-            color #CC0000
-            border-color border-red
+            color header-hover
+            border-color header-border-hover
 
 footer a
     color #70a0b0
