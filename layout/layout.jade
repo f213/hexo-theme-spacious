@@ -25,7 +25,7 @@ html(lang=page.lang)
             link(rel="shortcut icon", href= theme.favicon)
         if theme.apple_touch_icon
             link(rel="apple-touch-icon", href= theme.apple_touch_icon)
-        
+
         if theme.rss
             link(rel="alternate", type="application/atom+xml", href= url_for(theme.rss))
     body
@@ -37,7 +37,7 @@ html(lang=page.lang)
             != js("js/vendor/moment-with-locales")
             != js("js/vendor/livestamp")
 
-        //build:js /js/bundle.js 
+        // build:js /js/bundle.js 
         != js("js/mobile")
         if theme.social
             != js("js/vendor/likely")
@@ -47,7 +47,7 @@ html(lang=page.lang)
             +configured_lib('yandex_metrika')
             +configured_lib('google_analytics')
 
-        //endbuild 
+        // endbuild 
 
         if theme.fancy_dates
             != partial('_partial/fancy_dates')
