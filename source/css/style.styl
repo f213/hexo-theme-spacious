@@ -1,23 +1,23 @@
 @import "nib"
 
-length-overall      = 1000px
-length-content      = 820px
+$length-overall      = 1000px
+$length-content      = 820px
 
 
-link-color          = #0060a0
-link-border-color   = rgba(85, 102, 119, .4)
-link-hover          =  #e05020
-link-border-hover   = rgba(224, 80, 32, .5);
+$link-color          = #0060a0
+$link-border-color   = rgba(85, 102, 119, .4)
+$link-hover          =  #e05020
+$link-border-hover   = rgba(224, 80, 32, .5);
 
-navigation-color        = #008ace
-navigation-border-color = #b2ccf0
-navigation-hover        = #cc0000
-navigation-border-hover = link-border-hover
+$navigation-color        = #008ace
+$navigation-border-color = #b2ccf0
+$navigation-hover        = #cc0000
+$navigation-border-hover = $link-border-hover
 
-header-color        = black
-header-border-color = rgba(0, 0, 160, .15)
-header-hover        = navigation-hover
-header-border-hover = nav
+$header-color        = black
+$header-border-color = rgba(0, 0, 160, .15)
+$header-hover        = $navigation-hover
+$header-border-hover = nav
 
 
 @import "_partial/layout"

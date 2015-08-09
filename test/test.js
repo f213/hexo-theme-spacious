@@ -25,7 +25,7 @@ var $pages = {};
 var load$pages = function(){
     $pages.home = $load('index.html');
     $pages.post = $load('hello-world/index.html');
-}
+};
 
 before(function(done){
 

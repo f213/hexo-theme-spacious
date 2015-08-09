@@ -1,21 +1,23 @@
 nav
     a
         &:hover // at nav block only <span> shoud hover, not <a>. This is done for the delimiter not to hover.
-            color navigation-color
+            color $navigation-color
         margin-right 4px
         border-bottom 0
         span
-            border-bottom 1px solid navigation-border-color
-            color navigation-color
+            border-bottom 1px solid $navigation-border-color
+            color $navigation-color
             &:hover
-                color navigation-hover
-                border-color navigation-border-hover
+                color $navigation-hover
+                border-color $navigation-border-hover
             &:not(:hover)
                 transition color .5s ease
+    // @stylint off
     a + a::before
         content " ·  "
         display inline-block
         white-space pre
+    // @stylint on
     a.current, a.current>span
         &:hover // same as above, no hover for active delimiter
             color black
