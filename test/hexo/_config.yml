@@ -8,7 +8,6 @@ subtitle: The test blog for testing хексо-тим-спашоус
 description: Test blog description herer
 author: John Doe
 language: ru
-timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
