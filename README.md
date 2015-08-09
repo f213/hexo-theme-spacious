@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/f213/hexo-theme-spacious.svg?branch=master)](https://travis-ci.org/f213/hexo-theme-spacious)
 # Spacious theme for Hexo
 
 This is a simple [Hexo](http://hexo.io) theme, based on Ilya Birman's theme for his blogeninge [e2](http://blogengine.ru). It is a clean, clear, russian-friendly theme with simple responsive markup and some other features (see below).
