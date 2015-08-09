@@ -4,4 +4,4 @@ node_js:
 install:
     - npm install -g gulp mocha
     - npm install
-    - ./pre-test.sh
+    - ./test/pre-test.sh
