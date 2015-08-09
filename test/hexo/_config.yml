@@ -5,16 +5,16 @@
 # Site
 title: Hexo
 subtitle: The test blog for testing хексо-тим-спашоус
-description:
+description: Test blog description herer
 author: John Doe
-language:
+language: ru
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://localhost
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 
 # Directory
