@@ -8,7 +8,7 @@ if page.comments
         != partial('_partial/comments')
 
 if theme.neighbours
-    section#neighbours
+    #neighbours
         if page.prev
             span ←
             a(rel=prev href= url_for(page.prev.path))= page.prev.title
