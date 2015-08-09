@@ -1,4 +1,6 @@
 language: node_js
 node_js:
     - "0.12"
-install: ./pre-test.sh
+install:
+    - npm install -g gulp mocha
+    - ./pre-test.sh
