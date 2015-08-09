@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "description": "Hexo clean and clear theme with a lot of free space.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "cheerio": "^0.19.0",
     "del": "^1.2.0",
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.11.0",

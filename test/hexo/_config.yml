@@ -16,6 +16,8 @@ root: /
 permalink: :title/
 permalink_defaults:
 
+rss: /rss/index.xml
+
 # Directory
 source_dir: source
 public_dir: public
