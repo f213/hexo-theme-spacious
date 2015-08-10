@@ -3,6 +3,8 @@
 $length-overall      = 1000px
 $length-content      = 820px
 
+$text-color          = #111
+$background-color    = #fffff8 // thanks to http://www.daveliepmann.com/tufte-css/
 
 $link-color          = #0060a0
 $link-border-color   = rgba(85, 102, 119, .4)
@@ -14,10 +16,29 @@ $navigation-border-color = #b2ccf0
 $navigation-hover        = #cc0000
 $navigation-border-hover = $link-border-hover
 
-$header-color        = black
+$header-color        = $text-color
 $header-border-color = rgba(0, 0, 160, .15)
 $header-hover        = $navigation-hover
 $header-border-hover = nav
+
+body
+    font 15px "Helvetica Neue", Helvetica, Arial, sans-serif
+    background $background-color
+    color $text-color
+    line-height 1.5em
+    max-width $length-overall
+    margin-left 7vw
+    text-align left
+
+h1, h2
+    font-weight normal
+    font-size 36px
+    margin-bottom 0
+    line-height 40px
+h3
+    font-size 20px
+br
+    display none
 
 
 @import "_partial/layout"
