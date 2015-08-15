@@ -1,8 +1,6 @@
 var gulp = require('gulp'),
     $ = require('gulp-load-plugins')();
 
-gulp.task('server',  $.shell.task('node_modules/hexo/bin/hexo server', {cwd: '../../'}));
-
 gulp.task('csslint', function(){
      return gulp.src('source/css/**/*.styl')
         .pipe($.stylint({failOnError: true}));
