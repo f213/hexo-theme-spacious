@@ -29,8 +29,9 @@ html(lang=page.lang)
         if theme.rss
             link(rel="alternate", type="application/atom+xml", href= url_for(theme.rss))
     body
-        != partial('_partial/header')
-        != body
+        .wrapper
+            != partial('_partial/header')
+            != body
 
         != js("js/vendor/jquery")
         if theme.fancy_dates

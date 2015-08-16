@@ -1,12 +1,19 @@
+$content-margin = 10px
+
 @media screen and (max-width: 640px)
     body
-        margin-left 10px
-        padding-right 5px
         width 100%
+        position relative
+        margin 0
+        padding 0
         overflow-x hidden
-    p
-        line-height 24px
+        animation initial
+
+    .wrapper
+        margin 0 $content-margin
+
     footer
+        margin 40px $content-margin
         line-height 30px
 
     article
