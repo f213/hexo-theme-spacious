@@ -32,6 +32,7 @@ html(lang=page.lang)
         .wrapper
             != partial('_partial/header')
             != body
+            != partial('_partial/footer')
 
         != js("js/vendor/jquery")
         if theme.fancy_dates
@@ -52,5 +53,4 @@ html(lang=page.lang)
 
         if theme.fancy_dates
             != partial('_partial/fancy_dates')
-        != partial('_partial/footer')
 
