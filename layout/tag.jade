@@ -1,5 +1,5 @@
 section#tag-info
-    - var posts_count = page.posts.data.length;
+    - var posts_count = tag_post_count(page.tag);
     p.
         #{posts_count}  #{plural(posts_count - 1, __('posts').split(','))} #{__('with_tag')}
     h2= page.tag
