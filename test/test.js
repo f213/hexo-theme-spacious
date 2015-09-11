@@ -1,7 +1,6 @@
-var chai            = require('chai'),
+var HexoHelper      = require('./lib/HexoHelper'),
+    chai            = require('chai'),
     should          = chai.should(),
-    Hexo            = require('hexo'),
-    del             = require('del'),
     w3c             = require('w3cjs'),
     fs              = require('fs'),
     cheerio         = require('cheerio');
@@ -27,22 +26,20 @@ var load$pages = function(){
     $pages.post = $load('hello-world/index.html');
 };
 
+var helper = new HexoHelper(hexoInstallPath);
+
 before(function(done){
 
     if(!skipGenerate){
 
         // setup a hexo dir may be sloow
         this.timeout(15000);
-
-        del.sync(hexoInstallPath + '/public/*');
-
-        var hexo = new Hexo(hexoInstallPath, {});
-
-        hexo.init().then(function(){
-            return hexo.load();
+        helper.hexo.init().then(function(){
+            return helper.hexo.load();
         })
         .then(function(){
-            return hexo.call('generate', {});
+            helper.cleanPublic();
+            return helper.hexo.call('generate', {});
         })
         .then(function(){
             load$pages();

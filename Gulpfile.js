@@ -14,7 +14,7 @@ gulp.task('jshint', function(){
 });
 
 gulp.task('test', ['csslint', 'jshint'], function(){
-    return gulp.src('test/test.js')
+    return gulp.src('test/*.js')
         .pipe($.mocha({
             timeout:    8000
         }));
