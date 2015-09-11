@@ -23,7 +23,7 @@ var $pages = {};
 
 var load$pages = function(){
     $pages.home = $load('index.html');
-    $pages.post = $load('hello-world/index.html');
+    $pages.post = $load('default/hello-world/index.html');
 };
 
 var helper = new HexoHelper(hexoInstallPath);
@@ -39,6 +39,9 @@ before(function(done){
         })
         .then(function(){
             helper.cleanPublic();
+            return helper.hexo.call('clean', {});
+        })
+        .then(function(){
             return helper.hexo.call('generate', {});
         })
         .then(function(){
@@ -71,6 +74,9 @@ describe('Home page', function(){
     it('has valid RSS link', function(){
         $pages.home('link[rel="alternate"]').attr('href').should.be.eql('/rss/index.xml'); // тесты на HTML ебашить так.
     });
+    it('has no <br> tags (scripts/strip-br.js)', function(){
+        $pages.home('br').length.should.equal(0);
+    });
 });
 
 describe('Post page', function(){
@@ -80,7 +86,7 @@ describe('Post page', function(){
             this.timeout(w3cTimeout);
 
             w3c.validate({
-                file:       path('hello-world/index.html'),
+                file:       path('default/hello-world/index.html'),
                 callback:   function(result){
                     console.log(result.messages);
                     result.messages.should.not.have.length.above(2); // By default, w3c gives two warning messages
