@@ -6,17 +6,17 @@ if 'tags' in post
 
 article(class= is_favorite)
     if single
-        h2.article.title= post.title
+        h2.title= post.title
     else
-        h2: a.article.title(href= url_for(post.path))= post.title
+        h2: a.title(href= url_for(post.path))= post.title
 
-    .article.time
-        time(datetime= date_xml(post.date), data-livestamp= date_xml(post.date))= full_date(post.date, 'DD MMMM, HH:mm') 
+    .time
+        time(datetime= date_xml(post.date), data-livestamp= date_xml(post.date))= full_date(post.date, 'DD MMMM, HH:mm')
 
-    .article.content!= post.content
+    .content!= post.content
 
     if 'tags' in post
-        .article.tags
+        .tags
             each tag in post.tags.toArray()
                 if ! is_tag() || ! is_current(tag.path)
                     a(href= url_for(tag.path))= tag.name

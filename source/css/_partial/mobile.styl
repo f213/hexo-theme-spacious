@@ -2,12 +2,8 @@ $content-margin = 10px
 
 @media screen and (max-width: 640px)
     body
-        width 100%
-        position relative
         margin 0
         padding 0
-        overflow-x hidden
-        animation initial
 
     .wrapper
         margin 0 $content-margin
@@ -28,8 +24,15 @@ $content-margin = 10px
             align-self middle
         > ol, ul
             padding-left 15px
+        img
+            margin-bottom 0
+        p:first-child
+            margin-top 10px
         blockquote
             border-top 0
+            margin-top 0
+            padding-top 0
+
     section#readmore, section#neighbours
         display none
 
@@ -39,7 +42,3 @@ $content-margin = 10px
         margin 0
         text-align center
 
-    .mobile-wide
-        max-width $length-overall
-        overflow-x scroll
-        -webkit-overflow-scrolling touch
