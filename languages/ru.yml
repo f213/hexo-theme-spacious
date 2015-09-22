@@ -1,10 +1,12 @@
-previous:   Ранее
-next:       Позднее
-rss:        РСС
-readmore:   Еще
-email:      Элекропочта
-engine:     Работает на 
-hexo:       Хексо
-posts_with_tag: Заметки с тегом
-posts:      заметка, заметки, заметок
-with_tag:   с тегом
+previous:           Ранее
+next:               Позднее
+pagination_more:    Еще %d
+pagination_less:    Предыдущие %d
+rss:                РСС
+readmore:           Еще
+email:              Элекропочта
+engine:             Работает на 
+hexo:               Хексо
+posts_with_tag:     Заметки с тегом
+posts:              заметка, заметки, заметок
+with_tag:           с тегом

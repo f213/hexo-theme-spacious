@@ -26,6 +26,7 @@
     "framework"
   ],
   "dependencies": {
+    "lodash": "^3.10.1",
     "smart-plurals": "^1.1.0"
   },
   "devDependencies": {

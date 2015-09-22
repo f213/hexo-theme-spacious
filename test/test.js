@@ -22,8 +22,10 @@ var $load = function(file){
 var $pages = {};
 
 var load$pages = function(){
-    $pages.home = $load('index.html');
-    $pages.post = $load('default/hello-world/index.html');
+    $pages.home             = $load('index.html');
+    $pages.post             = $load('default/hello-world/index.html');
+    $pages.firstTagPage     = $load('tags/big-ammount-of-similar-posts/index.html');
+    $pages.secondTagPage    = $load('tags/big-ammount-of-similar-posts/page/2/index.html');
 };
 
 var helper = new HexoHelper(hexoInstallPath);
@@ -95,4 +97,21 @@ describe('Post page', function(){
             });
         });
     }
+});
+describe('Tag page', function(){
+    it('Next tag page post count', function(){
+        var nextPageCaption = $pages.firstTagPage('section.bottom.pagination>a').text();
+        var nextPageCount   = nextPageCaption.match(/\d+/)[0];
+        nextPageCount.should.be.equal('2');
+    });
+    it('Previous tag page post count', function(){
+        var prevPageCaption = $pages.secondTagPage('section.top.pagination>a').text();
+        var prevPageCount   = prevPageCaption.match(/\d+/)[0];
+        prevPageCount.should.be.equal(helper.hexo.config.per_page.toString());
+    });
+    it('Next archive page post count', function(){
+        var nextPageCaption = $pages.home('section.bottom.pagination>a').text();
+        var nextPageCount   = nextPageCaption.match(/\d+/)[0];
+        nextPageCount.should.be.equal('4');
+    });
 });

@@ -1,7 +1,7 @@
 if page.prev
     section.top.pagination
         h3 ↑
-        a(href= url_for(page.prev_link))= __('next')
+        a(href= url_for(page.prev_link))= __('pagination_less', config.per_page)
 
 main
     each post in page.posts.toArray()
@@ -10,4 +10,4 @@ main
 if page.next
     section.bottom.pagination
         h3 ↓
-        a(href= url_for(page.next_link))= __('previous')
+        a(href= url_for(page.next_link))= __('pagination_more', remaining_posts(page))
