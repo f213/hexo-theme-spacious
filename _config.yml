@@ -29,6 +29,12 @@ apple_touch_icon: /apple-touch-icon.png
 # disqus
 disqus_shortname:
 
+# add markup for useref to merge all CSS and JS files
+useref: true
+
+# add markup for gulp-smoosher (https://www.npmjs.com/package/gulp-smoosher)
+smoosh: true
+
 # analytics
 
 # for the next line to work you should place your tracking code

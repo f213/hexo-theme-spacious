@@ -32,6 +32,9 @@ public/
 # hexo database
 db.json
 
+# bower
+source/js/vendor
+
 # hexo deploy dir
 .deploy_git
 

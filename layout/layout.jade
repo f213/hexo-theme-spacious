@@ -7,12 +7,20 @@ html(lang=page.lang)
         meta(http-equiv='X-UA-Compatible', content='IE=Edge')
         meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
 
-        // build:css /css/bundle.css 
+        if 'smoosh' in theme && theme.smoosh
+            // smoosh
+        if 'useref' in theme && theme.useref
+            // build:css /css/bundle.css 
+
         != css("css/style")
         if theme.social
             != css("css/likely")
         != css("css/custom")
-        // endbuild 
+
+        if 'useref' in theme && theme.useref
+            // endbuild 
+        if 'smoosh' in theme && theme.smoosh
+            // endsmoosh 
 
         != partial('_partial/seo')
 
@@ -34,23 +42,26 @@ html(lang=page.lang)
             != body
             != partial('_partial/footer')
 
-        != js("js/vendor/jquery")
+        if 'useref' in theme && theme.useref
+            // build:js /js/bundle.js 
+
+        != js("js/vendor/jquery/dist/jquery.min")
         if theme.fancy_dates
-            != js("js/vendor/moment-with-locales")
-            != js("js/vendor/livestamp")
+            != js("js/vendor/moment/min/moment-with-locales.min")
+            != js("js/vendor/livestamp/livestamp.min")
 
-        != js("js/vendor/retina")
+        != js("js/vendor/retina.js/dist/retina.min")
 
-        // build:js /js/bundle.js 
         if theme.social
-            != js("js/vendor/likely")
+            != js("js/likely")
         != js("js/custom")
 
         if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)
             +configured_lib('yandex_metrika')
             +configured_lib('google_analytics')
 
-        // endbuild 
+        if 'useref' in theme && theme.useref
+            // endbuild 
 
         if theme.fancy_dates
             != partial('_partial/fancy_dates')
