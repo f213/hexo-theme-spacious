@@ -4,4 +4,5 @@ node_js:
 install:
     - npm install -g gulp mocha bower
     - npm install
+    - bower install
     - ./test/pre-test.sh
