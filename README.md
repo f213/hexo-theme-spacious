@@ -11,6 +11,7 @@ cd themes
 git clone git@github.com:f213/hexo-theme-spacious
 cd hexo-theme-spacious
 npm install
+bower install
 ```
 Then change your `theme` setting in `_config.yml`.
 
