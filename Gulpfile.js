@@ -7,7 +7,7 @@ gulp.task('csslint', function(){
 });
 
 gulp.task('jshint', function(){
-    return gulp.src(['source/js/**/*.js', '!source/js/vendor/**', 'test/*.js'])
+    return gulp.src(['source/js/**/*.js', '!source/js/vendor/**/*', '!source/js/likely.js', 'test/*.js'])
         .pipe($.jshint())
         .pipe($.jshint.reporter('default'))
         .pipe($.jshint.reporter('fail'));
