@@ -41,3 +41,4 @@ source/js/vendor
 # mine
 *.swp
 .DS_Store
+_config.yml
