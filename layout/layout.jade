@@ -53,7 +53,10 @@ html(lang=page.lang)
         != js("js/vendor/retina.js/dist/retina.min")
 
         if theme.social
+            != js("js/social")
             != js("js/likely")
+        != js("js/mobile")
+        != js('js/disqus')
         != js("js/custom")
 
         if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)
