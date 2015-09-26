@@ -8,9 +8,6 @@ $content-margin = 10px
     .wrapper
         margin 0 $content-margin
 
-    footer
-        line-height 30px
-
     article
         > .time
             display none
@@ -33,8 +30,22 @@ $content-margin = 10px
             margin-top 0
             padding-top 0
 
-    section#readmore, section#neighbours
+    #neighbours
         display none
+
+    #disqus_thread
+        display none
+
+    #readmore
+        column-count inherit
+        column-gap inherit
+    #readmore-contents
+        p
+            margin 15px 0
+        p:first-child
+            margin-top 10px
+        p:nth-child(n+6)
+            display none
 
     .mobile-centered-image
         position relative

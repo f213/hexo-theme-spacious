@@ -1,5 +1,15 @@
-(function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document. getElementsByTagName('body')[0]).appendChild(dsq);
-})();
+$(document).on('ready', function(){
+    if(typeof disqus_shortname == 'undefined' || ! disqus_shortname.length){
+        return false;
+    }
+    if(! $('body').hasClass('no-mobile')){
+        return false;
+    }
+
+    var script = document.createElement('script');
+    script.src      = '//' + disqus_shortname + '.disqus.com/embed.js';
+    script.type     = "text/javascript";
+    script.asunc    = true;
+
+    $('head').append(script);
+});

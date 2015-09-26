@@ -54,6 +54,8 @@ html(lang=page.lang)
 
         if theme.social
             != js("js/likely")
+        != js("js/mobile")
+        != js('js/disqus')
         != js("js/custom")
 
         if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)

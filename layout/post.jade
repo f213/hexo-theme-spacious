@@ -18,8 +18,9 @@ if theme.neighbours
             span →
 
 if theme.readmore
-    section#readmore
+    #readmore
         h3= __('readmore')
-        for post in site.posts.sort('date', -1).slice(0,9).toArray()
-            if (post.slug !== page.slug)
-                p: a(href= url_for(post.path))= post.title
+        #readmore-contents
+            for post in site.posts.sort('date', -1).slice(0,9).toArray()
+                if (post.slug !== page.slug)
+                    p: a(href= url_for(post.path))= post.title
