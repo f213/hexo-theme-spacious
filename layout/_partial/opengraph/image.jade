@@ -1,0 +1,5 @@
+if 'og_image' in page && page.og_image
+    if 'post_asset_folder' in theme && theme.post_asset_folder
+        +og('og:image', page.path + page.og_image)
+    else
+        +og('og:image', page.og_image)

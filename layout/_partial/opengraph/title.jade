@@ -1,0 +1,6 @@
+if page.title
+   +og('og:title', page.title)
+else if is_tag()
+   +og('og:title', __('posts_with_tag') + ' «' + page.tag + '»')
+else if is_home()
+   +og('og:title', config.title)

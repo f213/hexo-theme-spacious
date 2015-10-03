@@ -1,0 +1,8 @@
+-
+    var description = theme.description; // default to the blog description
+    if (_.has(page, 'og_description') && page.og_description){
+        description = page.og_description;
+    }else if(_.has(page, 'description') && page.description){
+        description = page.description;
+    }
++og('og:description', description)

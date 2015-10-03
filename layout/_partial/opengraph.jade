@@ -1,0 +1,20 @@
+-
+    var metas = {};
+
+mixin og(name, value)
+    - metas[name] = value;
+
+include opengraph/site_name
+include opengraph/url
+
+
+include opengraph/title
+include opengraph/description
+include opengraph/article
+include opengraph/image
+
+include opengraph/admin_id
+include opengraph/profile_id
+
+each value, name in metas
+    meta(property= name, content= value)

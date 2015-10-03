@@ -1,0 +1,4 @@
+if 'og_site_name' in theme && theme.og_site_name
+    +og('og:site_name', theme.og_site_name)
+else
+    +og('og:site_name', config.title)

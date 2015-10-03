@@ -35,6 +35,16 @@ useref: true
 # add markup for gulp-smoosher (https://www.npmjs.com/package/gulp-smoosher)
 smoosh: true
 
+# opengraph
+
+# your facebook id here
+admin_id: 100006565443356
+profile_href: https://facebook.com/Fedor213
+
+# separate opengraph site name
+
+og_site_name: test og title
+
 # analytics
 
 # for the next line to work you should place your tracking code
