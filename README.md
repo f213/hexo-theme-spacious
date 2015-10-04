@@ -70,12 +70,13 @@ tags/myTag/index.html: # this is a canonical url without hostname
 Theme is built with Jade and Stylus, so it can be easily customized.
 
 ### Build process
-CSS and JS refereneces are [useref](https://github.com/digisfera/useref)-friendly. The theme has bundled versions of vendor libraries for offline usage. For prudction i prefer to replace them with [cdnizer](https://github.com/OverZealous/cdnizer). 
-
-Here is my [Gulpfile](https://gist.github.com/f213/0d03c8d3bf8e5dd78969).
+CSS and JS refereneces are [useref](https://github.com/digisfera/useref)- and [smoosher](https://www.npmjs.com/package/gulp-smoosher)-friendly (see default `_config.yml`). Vendor assets are handled with bower.
 
 ### Custom JS and CSS
 Custom JS and CSS files are inteded to be placed in the `./source/js/custom.js` and `./source/css/custom.css` files. Please note that hexo does pass this files through its rendering mechanism, so `./source/css/custom.styl` (or your favorite preprocessor) is welcome.
 
 ### Development Mode
 Currently hexo [lacks](https://github.com/hexojs/hexo/issues/371) development mode support. I suggest that one should use some environment variables. For example this theme uses `HEXO_DEV` variable to switch off Google analytics while running hexo localy.
+
+### Custom opengraph
+Hexo [opengraph code](https://hexo.io/docs/helpers.html#open_graph) seems very strange and hard-configurable to me, so this theme has custom opengraph support. One can configure og:image, og:title and og:description for each post via front-matter. og:image is working with respect to post_asset_folder. Your fb:admin_id (for page statistics) and profile link (for shares only) can be configured via `_config.yml`.
