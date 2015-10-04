@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-spacious",
-  "version": "1.3.0",
+  "version": "1.3.3",
   "description": "Russian-friendly clean hexo theme with a lot of free space.",
   "scripts": {
     "test": "gulp test"
