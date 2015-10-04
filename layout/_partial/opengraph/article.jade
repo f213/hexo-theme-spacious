@@ -1,4 +1,4 @@
 if is_post()
     +og('og:type', 'article')
-    if profile_href in theme && theme.profile_href
+    if 'profile_href' in theme && theme.profile_href
         +og('article:author', theme.profile_href)

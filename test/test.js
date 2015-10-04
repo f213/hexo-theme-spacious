@@ -3,6 +3,7 @@ var HexoHelper      = require('./lib/HexoHelper'),
     should          = chai.should(),
     w3c             = require('w3cjs'),
     fs              = require('fs'),
+    getMeta         = require('./lib/getMeta'),
     cheerio         = require('cheerio');
 
 var skipW3c         = false;
@@ -23,9 +24,14 @@ var $pages = {};
 
 var load$pages = function(){
     $pages.home             = $load('index.html');
-    $pages.post             = $load('default/hello-world/index.html');
+    $pages.firstPost        = $load('default/hello-world/index.html');
+    $pages.secondPost       = $load('default/hello/index.html');
     $pages.firstTagPage     = $load('tags/big-ammount-of-similar-posts/index.html');
     $pages.secondTagPage    = $load('tags/big-ammount-of-similar-posts/page/2/index.html');
+
+    Object.keys($pages).forEach(function(i){ // loading meta (cheerio can not select meta tags)
+        $pages[i].meta = getMeta($pages[i]);
+    });
 };
 
 var helper = new HexoHelper(hexoInstallPath);
@@ -113,5 +119,34 @@ describe('Tag page', function(){
         var nextPageCaption = $pages.home('section.bottom.pagination>a').text();
         var nextPageCount   = nextPageCaption.match(/\d+/)[0];
         nextPageCount.should.be.equal('4');
+    });
+});
+
+describe('opengraph', function(){
+    it('og:url', function(){
+        $pages.home.meta['og:url'].should.be.equal('http://localhost/index.html');
+        $pages.firstPost.meta['og:url'].should.be.equal('http://localhost/default/hello-world/index.html');
+    });
+    it('fb:admin_id', function(){
+        $pages.home.meta['fb:admin_id'].should.be.equal('100500');
+        $pages.firstPost.meta.should.not.have.property('fb:admin_id'); // fb:admin_id is intended to be at home page only
+    });
+    it('og:image', function(){
+        $pages.secondPost.meta['og:image'].should.be.equal('http://localhost/default/hello/test.png');
+    });
+    it('og:type === "article"', function(){
+        $pages.home.meta.should.not.have.property('og:type');
+        $pages.firstTagPage.should.not.have.property('og:type'); // og_type inteded to be only at post page
+        $pages.firstPost.meta['og:type'].should.be.equal('article');
+        $pages.firstPost.meta['article:author'].should.be.equal('https://facebook.com/zukerman');
+    });
+    it('og:description', function(){
+        $pages.home.meta['og:description'].should.be.equal('Test blog description herer');          // default blog description
+        $pages.firstPost.meta['og:description'].should.be.equal('First post custom description');   // custom description via front-matter
+        $pages.secondPost.meta['og:description'].should.be.equal('Second post og:description');     // custom og:description via front-matter
+    });
+    it('og:title', function(){
+        $pages.home.meta['og:title'].should.be.equal('Hexo');                   // default title in _config.xml
+        $pages.secondPost.meta['og:title'].should.be.equal('og:Hello world');   // custom og:title configured via front-matter
     });
 });

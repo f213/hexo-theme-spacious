@@ -69,3 +69,7 @@ theme: hexo-theme-spacious
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# opengraph
+admin_id: 100500
+profile_href: https://facebook.com/zukerman

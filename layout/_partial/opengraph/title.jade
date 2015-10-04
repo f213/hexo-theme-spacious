@@ -1,4 +1,6 @@
-if page.title
+if 'og_title' in page && page.og_title
+    +og('og:title', page.og_title)
+else if page.title
    +og('og:title', page.title)
 else if is_tag()
    +og('og:title', __('posts_with_tag') + ' «' + page.tag + '»')
