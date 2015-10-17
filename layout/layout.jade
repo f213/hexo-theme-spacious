@@ -58,11 +58,12 @@ html(lang=page.lang)
             != js("js/likely")
         != js("js/mobile")
         != js('js/disqus')
-        != js("js/custom")
 
         if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)
             +configured_lib('yandex_metrika')
             +configured_lib('google_analytics')
+
+        != js("js/custom")
 
         if 'useref' in theme && theme.useref
             // endbuild 
