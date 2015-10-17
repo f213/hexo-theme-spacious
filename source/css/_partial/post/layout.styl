@@ -1,6 +1,24 @@
-article.favorite > h2
-    &:after
-        content " ⋆"
+article
+    h1, h2
+        margin-left -1px
+        font-size 24px
+        font-weight normal
+        line-height 28px
+
+    .time
+        font-size 11px
+        letter-spacing .1em
+        color rgba(128, 128, 128, .5)
+
+    .tags
+        margin-top 10px
+        font-size 12px
+        a
+            margin-right 10px
+    .favorite > h2
+        &:after
+            content " ⋆"
+
 #neighbours
     font-size 12px
     margin-top 40px
