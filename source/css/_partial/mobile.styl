@@ -9,26 +9,13 @@ $content-margin = 10px
         margin 0 $content-margin
 
     article
-        > .time
-            display none
-        > h1, h2
+        h1, h2
             line-height 32px
             margin-left 0
             font-size 23px
-        > p
-            line-height 26px
-        > .content > img
-            align-self middle
-        > ol, ul
-            padding-left 15px
-        img
-            margin-bottom 0
-        p:first-child
-            margin-top 10px
-        blockquote
-            border-top 0
-            margin-top 0
-            padding-top 0
+
+        time
+            display none
 
     #neighbours
         display none
@@ -41,3 +28,18 @@ $content-margin = 10px
         column-gap inherit
         p:nth-child(n+6)
             display none
+
+    .content
+        p
+            line-height 26px
+        ol, ul
+            padding-left 15px
+        p:first-child
+            margin-top 10px
+        > img, > figure > img
+            margin-bottom 0
+            max-width 80%
+        > blockquote
+            border-top 0
+            margin-top 0
+            padding-top 0

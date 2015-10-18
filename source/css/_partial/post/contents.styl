@@ -1,3 +1,5 @@
+$box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(0, 0, 0, .24), 0 0 0 1px rgba(0, 0, 0, .3)
+
 .content
     h4
         margin-top 15px
@@ -48,10 +50,10 @@
     .non-shadow>img, img.non-shadow
         box-shadow none
 
-    >img
+    > img
         max-width ($length-content * .8)
         margin 10px 0 30px
-        box-shadow inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px rgba(0, 0, 0, .24), 0 0 0 1px rgba(0, 0, 0, .3)
+        box-shadow $box-shadow
 
     > figure
         display inline-block
@@ -59,6 +61,10 @@
         padding-left 40px
         &.center
             text-align center
+        &.shadow
+            margin-bottom 30px
+            >img
+                box-shadow $box-shadow
         img
             box-shadow none
             margin-bottom 0
