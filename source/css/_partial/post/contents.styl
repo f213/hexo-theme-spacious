@@ -2,25 +2,30 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
 
 .content
     h4
-        margin-top 15px
+        margin-top 10px
         margin-bottom 0
 
     h4 + p
-        margin-top 0
-
-    img ~ h4
         margin-top 0
 
     p:first-child
         margin-top 0
         margin-bottom 10px
 
+        @media $mobile
+            margin-top 10px
+
     p
         margin 10px 0
 
+        @media $mobile
+            line-height 26px
     ul, ol
         margin-top -10px
         width 90%
+
+        @media $mobile
+            padding-left 15px
 
     ol
         padding 0 0 0 40px
@@ -55,6 +60,10 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         margin 10px 0 30px
         box-shadow $box-shadow
 
+        @media $mobile
+            margin-bottom 0
+            max-width 80%
+
     > figure
         display inline-block
         margin 10px 0
@@ -68,14 +77,30 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         img
             box-shadow none
             margin-bottom 0
+
+            @media $mobile
+                margin-bottom 0
+                max-width 80%
+
         figcaption
             text-align center
             color #555
+
+        @media $mobile
+            width 100%
+            padding-left 0
+            margin 0
+            text-align center
 
     > blockquote
         border-left solid 1px grey
         padding-left .5em
         margin-left 1.5em
+
+        @media $mobile
+            border-top 0
+            margin-top 0
+            padding-top 0
 
     > .video-container
         position relative

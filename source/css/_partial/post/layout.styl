@@ -5,10 +5,20 @@ article
         font-weight normal
         line-height 28px
 
+        @media $mobile
+            line-height 32px
+            margin-left 0
+            font-size 23px
+
     .time
         font-size 11px
         letter-spacing .1em
         color rgba(128, 128, 128, .5)
+
+        @media $mobile
+            display none
+
+
 
     .tags
         margin-top 10px
@@ -27,6 +37,8 @@ article
         padding 0 3px
     a + a
         margin-left 25px
+    @media $mobile
+        display none
 
 #readmore
     h3
@@ -39,6 +51,11 @@ article
         margin 10px 0
     p:first-child // stupid webkit!
         margin-top 0
+    @media $mobile
+        column-count inherit
+        column-gap inherit
+        p:nth-child(n+6)
+            display none
 
 #social
     margin-top 15px
@@ -51,3 +68,6 @@ section#tag-info
 
 #disqus_thread
     max-width $length-content
+
+    @media $mobile
+        display none

@@ -21,6 +21,7 @@ $header-border-color = rgba(0, 0, 160, .15)
 $header-hover        = $navigation-hover
 $header-border-hover = nav
 
+$mobile              = "screen and (max-width: 640px)"
 body
     font 15px "Helvetica Neue", Helvetica, Arial, sans-serif
     background $background-color
@@ -43,6 +44,14 @@ br
 .hidden
     display none
 
+@media $mobile
+    body
+        margin 0
+        padding 0
+    .wrapper
+        margin 0 10px
+
+
 @import "_partial/layout"
 @import "_partial/navigation"
 @import "_partial/links"
@@ -50,5 +59,3 @@ br
 @import "_partial/post/contents"
 @import "_partial/post/tables"
 @import "_partial/animation"
-
-@import "_partial/mobile"
