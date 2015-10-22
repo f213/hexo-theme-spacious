@@ -14,7 +14,7 @@ html(lang=page.lang)
 
         != css("css/style")
         if theme.social
-            != css("css/likely")
+            != css("vendor/likely/likely")
         != css("css/custom")
 
         if 'useref' in theme && theme.useref
@@ -46,16 +46,16 @@ html(lang=page.lang)
         if 'useref' in theme && theme.useref
             // build:js /js/bundle.js 
 
-        != js("js/vendor/jquery/dist/jquery.min")
+        != js("vendor/jquery/dist/jquery.min")
         if theme.fancy_dates
-            != js("js/vendor/moment/min/moment-with-locales.min")
-            != js("js/vendor/livestamp/livestamp.min")
+            != js("vendor/moment/min/moment-with-locales.min")
+            != js("vendor/livestamp/livestamp.min")
 
-        != js("js/vendor/retina.js/dist/retina.min")
+        != js("vendor/retina.js/dist/retina.min")
 
         if theme.social
             != js("js/social")
-            != js("js/likely")
+            != js("vendor/likely/likely")
         != js("js/mobile")
         != js('js/disqus')
 

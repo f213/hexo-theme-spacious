@@ -1,23 +1,10 @@
 {
   "name": "hexo-theme-spacious",
-  "version": "1.3.3",
-  "homepage": "https://github.com/f213/hexo-theme-spacious",
-  "authors": [
-    "Fedor Borshev <f@f213.in>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "source/js/vendor/",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "jquery": "~2.1.4",
     "livestamp": "~1.1.2",
     "moment": "~2.10.6",
-    "retina.js": "~1.3.0"
+    "retina.js": "~1.3.0",
+    "likely": "http://ilyabirman.ru/download/ilya-birman-likely-2.0.zip"
   }
 }

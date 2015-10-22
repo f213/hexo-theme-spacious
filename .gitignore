@@ -33,7 +33,7 @@ public/
 db.json
 
 # bower
-source/js/vendor
+source/vendor
 
 # hexo deploy dir
 .deploy_git
