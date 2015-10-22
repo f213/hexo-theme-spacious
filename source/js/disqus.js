@@ -9,7 +9,7 @@ $(document).on('ready', function(){
     var script = document.createElement('script');
     script.src      = '//' + disqus_shortname + '.disqus.com/embed.js';
     script.type     = "text/javascript";
-    script.asunc    = true;
+    script.async    = true;
 
     $('head').append(script);
 });
