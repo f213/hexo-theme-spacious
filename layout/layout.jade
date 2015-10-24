@@ -63,7 +63,7 @@ html(lang=page.lang)
         != js("js/mobile")
         != js('js/disqus')
 
-        if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)
+        if ! ('NODE_ENV' in process.env) || ('NODE_ENV' in process.env && process.env.NODE_ENV != 'development')
             +configured_lib('yandex_metrika')
             +configured_lib('google_analytics')
 

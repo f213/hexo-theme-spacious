@@ -64,6 +64,8 @@ tags/myTag/index.html: # this is a canonical url without hostname
         - user-friendly
     description: This is a page with description configured through source/_data/seo.yml    
 ```
+### Custom opengraph
+Hexo [opengraph code](https://hexo.io/docs/helpers.html#open_graph) seems very strange and hard-configurable to me, so this theme has custom opengraph support. One can configure og:image, og:title and og:description for each post via front-matter. og:image is working with respect to post_asset_folder. Your fb:admin_id (for page statistics) and profile link (for shares only) can be configured via `_config.yml`.
 
 ## Building and customizing
 ### Technologies
@@ -76,7 +78,4 @@ CSS and JS refereneces are [useref](https://github.com/digisfera/useref)- and [s
 Custom JS and CSS files are inteded to be placed in the `./source/js/custom.js` and `./source/css/custom.css` files. Please note that hexo does pass this files through its rendering mechanism, so `./source/css/custom.styl` (or your favorite preprocessor) is welcome.
 
 ### Development Mode
-Currently hexo [lacks](https://github.com/hexojs/hexo/issues/371) development mode support. I suggest that one should use some environment variables. For example this theme uses `HEXO_DEV` variable to switch off Google analytics while running hexo localy.
-
-### Custom opengraph
-Hexo [opengraph code](https://hexo.io/docs/helpers.html#open_graph) seems very strange and hard-configurable to me, so this theme has custom opengraph support. One can configure og:image, og:title and og:description for each post via front-matter. og:image is working with respect to post_asset_folder. Your fb:admin_id (for page statistics) and profile link (for shares only) can be configured via `_config.yml`.
+Currently hexo [lacks](https://github.com/hexojs/hexo/issues/371) development mode support. This theme uses `NODE_ENV` variable for hiding disqus and web analytics code from your local copies.

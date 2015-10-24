@@ -4,7 +4,7 @@ if theme.social
     != partial('_partial/social')
 
 if page.comments
-    if ! ('HEXODEV' in process.env) && !('HEXO_DEV' in process.env)
+    if ! ('NODE_ENV' in process.env) || ('NODE_ENV' in process.env && process.env.NODE_ENV != 'development')
         != partial('_partial/comments')
 
 if theme.neighbours
