@@ -15,6 +15,9 @@ html(lang=page.lang)
         != css("css/style")
         if theme.social
             != css("vendor/likely/likely")
+
+        != css("vendor/tooltipster/css/tooltipster")
+
         != css("css/custom")
 
         if 'useref' in theme && theme.useref
@@ -53,6 +56,7 @@ html(lang=page.lang)
 
         != js("vendor/retina.js/dist/retina.min")
 
+        != js("vendor/tooltipster/js/jquery.tooltipster.min")
         if theme.social
             != js("js/social")
             != js("vendor/likely/likely")
