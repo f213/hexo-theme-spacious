@@ -64,6 +64,11 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
             margin-bottom 0
             max-width 80%
 
+    // use <figure> to plae non-specific images to the post
+    // <figure class="center"> to center-align your image
+    // <figure class="shadow"> to add the default shadow to it
+    // Use <figcaption> inside of a <figure> tag to place a caption
+
     > figure
         display inline-block
         margin 10px 0
@@ -92,6 +97,7 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
             margin 0
             text-align center
 
+    // default quote, no author support
     > blockquote
         border-left solid 1px grey
         padding-left .5em
@@ -110,6 +116,7 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
             width 100%
             height 100%
 
+    // this class is to be places on every block that can not, for some reasons, fit a viewport
     .wide
         max-width $length-overall
         overflow-x scroll
@@ -121,3 +128,23 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         border-bottom 1px dashed grey
         line-height 18px
         -webkit-tap-highlight-color rgba(0, 0, 0, 0) // disable tap highlighting
+
+    // tables inspired by tufte-css, http://www.daveliepmann.com/tufte-css/
+    table
+        border-spacing 0 5px
+        text-align center
+        line-height 22px
+        th
+            text-align left
+            border-bottom 1px solid #AAAAAA
+            font-weight bold
+        td
+            padding-right 15%
+            padding-bottom 26px
+            &.text
+                text-align left
+            &.number
+                >div, >p
+                    width 27px
+                    text-align right
+                    display inline-block
