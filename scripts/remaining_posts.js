@@ -34,6 +34,11 @@ var _ = require('lodash');
 
         var total = getAllHexoPosts(page).length;
 
-        return total % hexo.config.per_page;
+        var remaining = total % hexo.config.per_page;
+
+        if(remaining === 0){
+            remaining = hexo.config.per_page;
+        }
+        return remaining;
     });
 })();
