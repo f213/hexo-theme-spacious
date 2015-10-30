@@ -10,7 +10,7 @@ npm install --save hexo-renderer-jade hexo-renderer-stylus
 cd themes
 git clone git@github.com:f213/hexo-theme-spacious
 cd hexo-theme-spacious
-npm install
+npm install --production
 bower install
 ```
 Then change your `theme` setting in `_config.yml`.
@@ -29,11 +29,11 @@ menu:
     About me: /about/index.html
     Favorites: tag:favorites
     My JS Posts: tag:JS
-    My CSS Posts: tag:CSS 
+    My CSS Posts: tag:CSS
     rss:  /rss/index.xml
-```    
+```
 
-### Favorite tag
+### Favorite posts
 There is some special tag for highlighting your favorite posts. By default it is named 'Избранное' and can be configured via the `favortie_tag` variable in `_config.yml`.
 
 ### Formatting dates
