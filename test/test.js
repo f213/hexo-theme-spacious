@@ -150,3 +150,9 @@ describe('opengraph', function(){
         $pages.secondPost.meta['og:title'].should.be.equal('og:Hello world');   // custom og:title configured via front-matter
     });
 });
+
+describe('Tag helpers (functional)', function(){
+    it('soundcloud', function(){
+        $pages.firstPost('.soundcloud>iframe').attr('src').should.be.equal('https://w.soundcloud.com/player/?url=https%3a//api.soundcloud.com/tracks/100500&color=00aabb&auto_play=false&hide_related=true&show_comments=false');
+    });
+});

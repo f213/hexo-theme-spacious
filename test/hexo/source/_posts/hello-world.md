@@ -38,4 +38,8 @@ More info: [Generating](http://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
+### Tag helper test
+
+{% soundcloud '100500' %}
+
 More info: [Deployment](http://hexo.io/docs/deployment.html)
