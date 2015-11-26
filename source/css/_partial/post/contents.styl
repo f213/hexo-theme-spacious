@@ -142,6 +142,7 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         border-spacing 0 5px
         text-align center
         line-height 22px
+        margin-top -5px
         th
             text-align left
             border-bottom 1px solid #AAAAAA
@@ -160,3 +161,14 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
                     width 27px
                     text-align right
                     display inline-block
+
+        // big tables suite well for much ammount of data or a long text
+        &.big
+            @media $desktop
+                width 80%
+            @media $mobile
+                width 95%
+            td
+                white-space normal
+                text-align left
+                padding-bottom 0
