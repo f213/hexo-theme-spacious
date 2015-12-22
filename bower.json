@@ -6,6 +6,6 @@
     "moment": "~2.10.6",
     "retina.js": "~1.3.0",
     "tooltipster": "~3.3.0",
-    "Likely": "ilyabirman-likely#~2.0.4"
+    "Likely": "ilyabirman-likely#~2.0.7"
   }
 }
