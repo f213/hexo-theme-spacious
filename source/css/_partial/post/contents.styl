@@ -5,7 +5,7 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         margin-top 10px
         margin-bottom 0
 
-    h4 + p
+    h4 + p, h3 + p, h2 + p
         margin-top 0
 
     p:first-child
@@ -20,6 +20,9 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
 
         @media $mobile
             line-height 26px
+
+    h4 + ol, h3 + ol, h2 + ol, h4 + ul, h3 + ul, h3 + ul
+        margin-top 0
 
     ul, ol
         margin-top -10px
@@ -48,9 +51,6 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
         margin-bottom 6px
         list-style-type none
 
-    .non-shadow>img, img.non-shadow
-        box-shadow none
-
     >img, >p>img
         max-width ($length-content * .8)
         margin 10px 0 30px
@@ -62,7 +62,8 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
             margin-bottom 0
             max-width 80%
 
-    // use <figure> to plae non-specific images to the post
+    // use <figure> to place images to the post
+    //
     // <figure class="center"> to center-align your image
     // <figure class="shadow"> to add the default shadow to it
     // Use <figcaption> inside of a <figure> tag to place a caption
@@ -113,6 +114,12 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
             position absolute
             width 100%
             height 100%
+    > .gist
+        width 80%
+
+        @media $mobile
+            width 100%
+
     > .soundcloud
         // used by `soundcloud` block tag
         max-width 90%
