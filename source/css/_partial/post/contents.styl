@@ -20,9 +20,10 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
 
         @media $mobile
             line-height 26px
+
     ul, ol
         margin-top -10px
-        width 90%
+        max-width 90%
 
         @media $mobile
             padding-left 15px
@@ -30,35 +31,32 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
     ol
         padding 0 0 0 40px
         counter-reset ol
+        > li
+            &:before
+                counter-increment ol
+                content counter(ol) ')\a0'
+                margin-left -18px
 
     ul
         padding 0 0 0 1.5em
+        > li
+            &:before
+                content '\2014\a0'
+                margin-left -18px
 
     li
-        margin-bottom 8px
-        &:first-child
-            margin-top 12px
-
-    ul > li
+        margin-bottom 6px
         list-style-type none
-        &:before
-            content '\2014\a0'
-            margin-left -18px
-
-    ol > li
-        list-style-type none
-        &:before
-            counter-increment ol
-            content counter(ol) ')\a0'
-            margin-left -18px
 
     .non-shadow>img, img.non-shadow
         box-shadow none
 
-    > img
+    >img, >p>img
         max-width ($length-content * .8)
         margin 10px 0 30px
-        box-shadow $box-shadow
+
+        &.shadow
+            box-shadow $box-shadow
 
         @media $mobile
             margin-bottom 0
@@ -140,28 +138,20 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px       rgba(
     // tables inspired by tufte-css, http://www.daveliepmann.com/tufte-css/
     table
         border-spacing 0 5px
-        text-align center
         line-height 22px
         margin-top -5px
+        text-align left
+        vertical-align top
         th
-            text-align left
             border-bottom 1px solid #AAAAAA
             font-weight bold
-            vertical-align top
         td
             padding-right 20px
             padding-bottom 26px
             margin-right 50px
-            vertical-align top
-            &.text
-                text-align left
-                white-space nowrap
 
-            &.number
-                >div, >p
-                    width 27px
-                    text-align right
-                    display inline-block
+            &.text
+                white-space nowrap
 
         // big tables suite well for much ammount of data or a long text
         &.big
