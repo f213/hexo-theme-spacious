@@ -30,11 +30,13 @@ nav
 section.pagination
     font-size 12px
     position relative
-    left -10px
-    h3
-        display inline-block
-        font-size inherit
-        padding 0 3px
-        position relative
+    margin-top 25px
+    span
+        display inline
+        font-size 12px
+        position absolute
         bottom 2px
-        left -5px
+        @media $desktop
+            left -11px
+        @media $mobile
+            left -8px

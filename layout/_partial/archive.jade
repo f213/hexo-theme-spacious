@@ -1,6 +1,6 @@
 if page.prev
     section.top.pagination
-        h3 ↑
+        span ↑
         a(href= url_for(page.prev_link))= __('pagination_less', config.per_page)
 
 main
@@ -9,5 +9,5 @@ main
 
 if page.next
     section.bottom.pagination
-        h3 ↓
+        span ↓
         a(href= url_for(page.next_link))= __('pagination_more', remaining_posts(page))
