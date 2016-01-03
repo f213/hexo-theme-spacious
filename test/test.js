@@ -73,7 +73,8 @@ describe('Home page', function(){
                 file:       path('index.html'),
                 callback:   function (result){
                     console.log(result.messages);
-                    result.messages.should.not.have.length.above(2); // By default, w3c gives two warning messages
+                    result.messages.should.not.have.length.above(3); // By default, w3c gives two warning messages
+                        // and one is for section heading
                     done();
                 }
             });
