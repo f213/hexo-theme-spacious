@@ -5,4 +5,4 @@ install:
     - npm install -g gulp mocha bower
     - npm install
     - bower install
-    - ./test/pre-test.sh
+    - cd ./test/hexo && npm install
