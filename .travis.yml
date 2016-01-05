@@ -6,3 +6,4 @@ install:
     - npm install
     - bower install
     - cd ./test/hexo && npm install
+    - cd ../../
