@@ -1,4 +1,6 @@
-$box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px rgba(0, 0, 0, .24), 0 0 0 1px rgba(0, 0, 0, .3)
+$box-shadow = inset 0 0 0 rgba(255, 255, 255, .6), 0 22px 40px 4px rgba(0, 0, 0, .24), 0 0 0 1px rgba(0, 0, 0, .3)
+$screenshot-border-radius-big = 3px
+$screenshot-border-radius-small = 2px
 
 .content
     h4
@@ -54,8 +56,13 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px rgba(0, 0, 
         max-width ($length-content * .8)
         margin 10px 0 30px
 
-        &.shadow
+        &.shadow, &.screenshot, &.screenshot-small
             box-shadow $box-shadow
+
+        &.screenshot
+            border-radius $screenshot-border-radius-big
+        &.screenshot-small
+            border-radius $screenshot-border-radius-small
 
         @media $mobile
             margin-bottom 0
@@ -65,18 +72,30 @@ $box-shadow = inset 0 1px 0 rgba(255, 255, 255, .6), 0 22px 40px 4px rgba(0, 0, 
     //
     // <figure class="center"> to center-align your image
     // <figure class="shadow"> to add the default shadow to it
+    // <figure class="screenshot"> will apply rounded borders to look like a standard OS X screenshot.
+    //
+    // The prefered width of the screenshot is 720px. If your shot is less then 720px, use <figure class="screenshot-small">
+    //
     // Use <figcaption> inside of a <figure> tag to place a caption
 
     > figure
         display inline-block
         margin 10px 0
         padding-left 40px
+
         &.center
             text-align center
-        &.shadow
+
+        &.shadow, &.screenshot, &.screenshot-small
             margin-bottom 30px
             >img
                 box-shadow $box-shadow
+
+        &.screenshot>img
+            border-radius $screenshot-border-radius-big
+        &.screenshot-small>img
+            border-radius $screenshot-border-radius-small
+
         img
             box-shadow none
             margin-bottom 0
